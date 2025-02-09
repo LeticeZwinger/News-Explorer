@@ -4,7 +4,6 @@ function App() {
   return (
     <div>
       <Header />
-      <h1>News Explorer</h1>
     </div>
   );
 }
