@@ -2,7 +2,7 @@ import Header from "../Header/Header";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Header />
     </div>
   );

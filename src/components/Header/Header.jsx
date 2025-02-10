@@ -1,7 +1,10 @@
 import "./Header.css";
+import Navigator from "../Navigator/Navigator";
+
 function Header() {
   return (
     <header className="header" id="header">
+      <Navigator />
       <div className="header-field">
         <div className="header__container">
           <h1 className="header__title">What's going on in the world?</h1>

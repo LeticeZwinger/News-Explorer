@@ -6,3 +6,8 @@
   font-family: "Roboto";
   src: url(./vendor/fonts/roboto-400-regular.woff);
 }
+
+@font-face {
+  font-family: "Roboto-slab-700";
+  src: url(./vendor/fonts/roboto-slab-700.woff);
+}

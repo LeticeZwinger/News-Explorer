@@ -1,0 +1,94 @@
+.navigator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  height: 80px;
+  padding: 0 104px;
+  background: rgba(196, 196, 196, 0.01);
+  border-bottom: 1px solid rgba(196, 196, 196, 0.3);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+.navigator__container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.navigator__logo {
+  margin: 0;
+  border-bottom: 3px solid transparent;
+  font-family: "Roboto-slab-700";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.navigator__right-side {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 42px;
+  flex: 1;
+  padding: 0;
+}
+
+.navigator__link {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  column-gap: 35px;
+  align-items: flex-end;
+}
+
+.navigator__items {
+  position: relative;
+}
+
+.navigator__home-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: white;
+}
+
+.navigator__home-btn::after {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  bottom: -18px;
+  left: -10px;
+}
+
+.navigator__signin-btn {
+  display: inline-block;
+  padding: 10px 50px;
+  border: 1px solid white;
+  border-radius: 50px;
+  background: transparent;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    0.3s,
+    color 0.3s;
+}
