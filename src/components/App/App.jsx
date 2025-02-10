@@ -1,4 +1,5 @@
 import Header from "../Header/Header";
+import SearchBar from "../SearchBar/SeachBar";
 
 function App() {
   return (

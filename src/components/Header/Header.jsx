@@ -1,5 +1,6 @@
 import "./Header.css";
 import Navigator from "../Navigator/Navigator";
+import SearchBar from "../SearchBar/SeachBar";
 
 function Header() {
   return (
@@ -12,6 +13,7 @@ function Header() {
             Find the latest news on any topic and save them in your personal
             account.
           </p>
+          <SearchBar />
         </div>
       </div>
     </header>
