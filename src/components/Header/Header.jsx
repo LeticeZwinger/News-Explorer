@@ -1,11 +1,11 @@
 import "./Header.css";
 import Navigator from "../Navigator/Navigator";
-import SearchBar from "../SearchBar/SeachBar";
+import SearchBar from "../SearchBar/SearchBar";
 
-function Header() {
+function Header({ onSignUp, onSignIn }) {
   return (
     <header className="header" id="header">
-      <Navigator />
+      <Navigator onSignUp={onSignUp} onSignIn={onSignIn} />
       <div className="header-field">
         <div className="header__container">
           <h1 className="header__title">What's going on in the world?</h1>
