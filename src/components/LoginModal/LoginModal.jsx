@@ -40,7 +40,7 @@ function LoginModal({ isOpen, onClose, onLogin, openRegisterModal }) {
           onClick={openRegisterModal}
           type="button"
         >
-          <span>or</span> Sign Up
+          <span className="modal__redirect">or</span> Sign Up
         </button>
       }
     >

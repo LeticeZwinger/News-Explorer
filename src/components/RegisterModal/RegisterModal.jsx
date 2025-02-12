@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
-
+import "../ModalWithForm/ModalWithForm.css";
 function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,19 +27,22 @@ function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
       onClose={onClose}
       onSubmit={handleSubmit}
       isFormValid={isFormValid}
+      containerClassName="modal__container_register"
       alternateButton={
         <button
-          className="modal__switch-btn"
+          className="modal__or-signin-btn"
           onClick={openLoginModal}
           type="button"
         >
-          Already have an account? Sign In
+          <span className="modal__redirect"> or </span>
+          Sign In
         </button>
       }
     >
-      <label>
+      <label className="modal__label">
         Email *
         <input
+          className="modal__input"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -47,9 +50,10 @@ function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
           placeholder="Email"
         />
       </label>
-      <label>
+      <label className="modal__label">
         Password *
         <input
+          className="modal__input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -57,9 +61,10 @@ function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
           placeholder="Password"
         />
       </label>
-      <label>
+      <label className="modal__label">
         Name *
         <input
+          className="modal__input"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}

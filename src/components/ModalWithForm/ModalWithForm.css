@@ -1,8 +1,8 @@
 .modal__container_form {
   background-color: #fff;
-  padding: 30px 20px;
-  border-radius: 16px; /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  padding: 34px 36px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   max-width: 400px;
   width: 100%;
   position: relative;
@@ -13,7 +13,8 @@
   font-family: "Roboto-900";
   font-size: 28px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin: 0 auto 22px;
+  padding: 34px auto 36px;
   color: #333;
   text-align: left;
 }
@@ -40,20 +41,20 @@
   display: block;
   text-align: left;
   font-weight: 500;
-  color: #3b74f2; /* Blue label text */
+  color: #3b74f2;
   margin-top: 15px;
   font-size: 12px;
 }
 
 .modal__submit {
   font-family: "Roboto-500";
-  background-color: #3b74f2;
+  background-color: rgba(47, 113, 229, 1);
   color: white;
   border: none;
   padding: 15px 0;
   font-size: 18px;
   font-weight: bold;
-  border-radius: 50px; /* Fully rounded button */
+  border-radius: 50px;
   cursor: pointer;
   width: 100%;
   margin-top: 20px;
@@ -61,11 +62,15 @@
 }
 
 .modal__submit_disabled {
-  color: rgba(230, 232, 235, 1);
+  /* background-color: rgba(230, 232, 235, 1); */
 }
 
 .modal__submit:hover {
-  background-color: #2c5ec9;
+  background-color: #347eff;
+}
+
+.modal__submit:active {
+  background-color: #2a65cc;
 }
 
 .modal__alternate-actions {
@@ -74,17 +79,19 @@
   color: #555;
 }
 
+.modal__redirect {
+  font-family: "inter-400";
+  color: black;
+}
+
 .modal__or-signup-btn,
 .modal__or-signin-btn {
+  font-family: "inter-400";
+  font-size: 14px;
   background: none;
   border: none;
-  color: #3b74f2;
+  color: rgba(47, 113, 229, 1);
   cursor: pointer;
   font-weight: bold;
   transition: color 0.3s;
-}
-
-.modal__or-signup-btn:hover,
-.modal__or-signin-btn:hover {
-  color: #2c5ec9;
 }
