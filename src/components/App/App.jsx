@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessSignupModal/SuccessSignupModal";
 import LoginModal from "../LoginModal/LoginModal";
+import About from "../About/About";
 import "./App.css";
 
 function App() {
@@ -10,7 +11,6 @@ function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
 
-  // Modal Handlers
   const openRegisterModal = () => setIsRegisterOpen(true);
   const openLoginModal = () => setIsLoginOpen(true);
   const openSuccessModal = () => setIsSuccessOpen(true);
@@ -57,6 +57,7 @@ function App() {
       />
 
       <SuccessModal isOpen={isSuccessOpen} onClose={closeAllModals} />
+      <About />
     </div>
   );
 }

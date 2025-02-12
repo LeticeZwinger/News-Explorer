@@ -1,0 +1,44 @@
+.about {
+  display: flex;
+  column-gap: 56px;
+  max-width: 1440px;
+  margin-left: calc(10% - 40px);
+  margin-right: calc(10% - 40px);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.about__container {
+  max-width: 100%;
+  height: 624;
+  /* margin: 80px 206px 80px 104px; */
+}
+.about__content {
+  padding-top: 51px;
+  max-width: 600px;
+  flex-shrink: 1;
+}
+
+.about__content p {
+  text-indent: 50px;
+}
+.about__image {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about__title {
+  font-family: "Roboto-slab-400";
+  font-family: 40px;
+  color: #1a1b22;
+}
+
+.about__paragraph {
+  font-family: "Roboto";
+  font-size: 18px;
+  text-align: justify;
+}
