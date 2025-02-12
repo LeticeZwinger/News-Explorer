@@ -4,6 +4,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessSignupModal/SuccessSignupModal";
 import LoginModal from "../LoginModal/LoginModal";
 import About from "../About/About";
+import Footer from "../Footer/Footer";
 import "./App.css";
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
 
       <SuccessModal isOpen={isSuccessOpen} onClose={closeAllModals} />
       <About />
+      <Footer />
     </div>
   );
 }
