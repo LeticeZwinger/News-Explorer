@@ -40,13 +40,14 @@ function LoginModal({ isOpen, onClose, onLogin, openRegisterModal }) {
           onClick={openRegisterModal}
           type="button"
         >
-          or Sign Up
+          <span>or</span> Sign Up
         </button>
       }
     >
       <label className="modal__label">
-        Email *
+        Email
         <input
+          className="modal__input"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -55,8 +56,9 @@ function LoginModal({ isOpen, onClose, onLogin, openRegisterModal }) {
         />
       </label>
       <label className="modal__label">
-        Password *
+        Password
         <input
+          className="modal__input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
