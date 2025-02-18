@@ -1,0 +1,83 @@
+.newscard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes source to the bottom */
+  /* height: 100%; Ensures it takes the full height */
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 576px;
+  width: 400px;
+}
+
+.newscard__image-container {
+  position: relative;
+}
+
+.newscard__image {
+  width: 100%;
+  height: 272px;
+  object-fit: cover;
+}
+
+.newscard__bookmark-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url("../../assets/bookmark-unsaved.svg") no-repeat center;
+  background-size: cover;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.newscard__content {
+  padding: 20px 24px 18px;
+  flex-grow: 1;
+}
+
+.newscard__date {
+  font-family: sans-serif;
+  color: #b6bcbf;
+  font-size: 18px;
+  margin: 0 auto 12px;
+}
+
+.newscard__title {
+  font-family: "Roboto-slab-400";
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.newscard__text {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.newscard__source {
+  padding: 24px 0 24px 24px;
+  font-size: 12px;
+  font-weight: bold;
+  color: gray;
+  text-transform: uppercase;
+  background: white;
+  margin: 0;
+}

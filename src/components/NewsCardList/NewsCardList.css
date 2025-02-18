@@ -1,0 +1,14 @@
+.newscard-list {
+  display: flex;
+  justify-content: center;
+}
+
+.newscard-list__section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 190px 104px 208px 104px;
+  background-color: #f5f6f7;
+}

@@ -5,6 +5,8 @@ import SuccessModal from "../SuccessSignupModal/SuccessSignupModal";
 import LoginModal from "../LoginModal/LoginModal";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
+
+import NewsCardList from "../NewsCardList/NewsCardList";
 import "./App.css";
 
 function App() {
@@ -58,6 +60,8 @@ function App() {
       />
 
       <SuccessModal isOpen={isSuccessOpen} onClose={closeAllModals} />
+
+      <NewsCardList />
       <About />
       <Footer />
     </div>

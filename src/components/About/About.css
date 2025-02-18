@@ -1,8 +1,8 @@
 .about {
   display: flex;
-  column-gap: 56px;
+  column-gap: 80px;
   max-width: 1440px;
-  margin-left: calc(10% - 40px);
+  margin-left: calc(10% - 85px);
   margin-right: calc(10% - 40px);
   padding-top: 80px;
   padding-bottom: 80px;
@@ -10,11 +10,10 @@
 .about__container {
   max-width: 100%;
   height: 624;
-  /* margin: 80px 206px 80px 104px; */
 }
 .about__content {
   padding-top: 51px;
-  max-width: 600px;
+  max-width: 800px;
   flex-shrink: 1;
 }
 
