@@ -16,10 +16,24 @@ function LoginModal({ isOpen, onClose, onLogin, openRegisterModal }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     try {
-      await onLogin({ email, password });
+      const response = await fetch(
+        `http://localhost:5001/users?email=${email}&password=${password}`,
+      );
+      const data = await response.json();
+
+      if (data.length > 0) {
+        console.log("Login successful:", data[0]);
+        alert(`Welcome, ${data[0].name}!`);
+        onClose(); // Close the modal on successful login
+      } else {
+        console.error("Invalid credentials");
+        setError("Invalid email or password");
+      }
     } catch (err) {
-      setError(err.message || "Something went wrong.");
+      console.error("Login failed:", err);
+      setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
