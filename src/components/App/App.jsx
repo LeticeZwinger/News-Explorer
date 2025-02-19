@@ -13,6 +13,7 @@ function App() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const openRegisterModal = () => setIsRegisterOpen(true);
   const openLoginModal = () => setIsLoginOpen(true);
@@ -37,7 +38,11 @@ function App() {
 
   return (
     <div className="app">
-      <Header onSignUp={openRegisterModal} onSignIn={openLoginModal} />
+      <Header
+        onSignUp={openRegisterModal}
+        onSignIn={openLoginModal}
+        setSearchQuery={setSearchQuery}
+      />
 
       <RegisterModal
         isOpen={isRegisterOpen}
@@ -61,7 +66,7 @@ function App() {
 
       <SuccessModal isOpen={isSuccessOpen} onClose={closeAllModals} />
 
-      <NewsCardList />
+      <NewsCardList searchQuery={searchQuery} />
       <About />
       <Footer />
     </div>

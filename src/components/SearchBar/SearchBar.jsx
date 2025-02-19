@@ -1,22 +1,29 @@
+import { useState } from "react";
 import "./SearchBar.css";
-function SearchBar() {
+
+function SearchBar({ setSearchQuery }) {
+  const [input, setInput] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Search Query Submitted:", input);
+    setSearchQuery(input);
+  };
+
   return (
     <div className="search-bar">
-      <form className="search-bar__container">
+      <form className="search-bar__container" onSubmit={handleSubmit}>
         <input
           className="search-bar__input"
           type="text"
           placeholder="Enter topic"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
           minLength={2}
-          maxLength={60}
+          maxLength={30}
           name="search"
         />
-        <button
-          className="search-bar__btn"
-          name="search"
-          title="Search"
-          type="submit"
-        >
+        <button className="search-bar__btn" type="submit">
           Search
         </button>
       </form>

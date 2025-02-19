@@ -2,7 +2,7 @@ import "./Header.css";
 import Navigator from "../Navigator/Navigator";
 import SearchBar from "../SearchBar/SearchBar";
 
-function Header({ onSignUp, onSignIn }) {
+function Header({ onSignUp, onSignIn, setSearchQuery }) {
   return (
     <header className="header" id="header">
       <Navigator onSignUp={onSignUp} onSignIn={onSignIn} />
@@ -13,7 +13,7 @@ function Header({ onSignUp, onSignIn }) {
             Find the latest news on any topic and save them in your personal
             account.
           </p>
-          <SearchBar />
+          <SearchBar setSearchQuery={setSearchQuery} />
         </div>
       </div>
     </header>

@@ -1,8 +1,8 @@
 .newscard {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Pushes source to the bottom */
-  /* height: 100%; Ensures it takes the full height */
+  justify-content: space-between;
+
   background: white;
   border-radius: 8px;
   overflow: hidden;
@@ -65,7 +65,7 @@
   font-size: 14px;
   color: #333;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -73,8 +73,9 @@
 }
 
 .newscard__source {
+  font-family: "Roboto-slab-700";
   padding: 24px 0 24px 24px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
   color: gray;
   text-transform: uppercase;
