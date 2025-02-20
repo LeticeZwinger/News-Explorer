@@ -22,18 +22,34 @@
 }
 
 .newscard__bookmark-btn {
+  background: url("../../assets/bookmark-unsaved.svg") center no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
   position: absolute;
   top: 10px;
   right: 10px;
-  background: url("../../assets/bookmark-unsaved.svg") no-repeat center;
-  background-size: cover;
-  background-color: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
+  z-index: 2;
 }
+.newscard__signin-tooltip {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* .newscard__bookmark-btn:hover {
+  background: url("../../assets/bookmark-hover.svg") no-repeat center;
+} */
 
 .newscard__content {
   padding: 20px 24px 18px;
@@ -81,4 +97,27 @@
   text-transform: uppercase;
   background: white;
   margin: 0;
+}
+
+.newscard__bookmark-btn_saved {
+  background: url("../../assets/bookmark-saved.svg") center no-repeat;
+  background-size: contain;
+}
+
+.newscard__signin-to-save {
+  font-family: "Roboto", sans-serif;
+  max-height: 40px;
+  background-color: #fff;
+  max-width: 175px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 14.06px;
+  font-weight: 500;
+  padding: 13px 15px;
+  border-radius: 8px;
+  color: #000;
+}
+
+.newscard__bookmark-btn:hover .newscard__signin-tooltip {
+  display: block;
 }
