@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SavedArticles from "../SavedArticles/SavedArticles";
 import Header from "../Header/Header";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessSignupModal/SuccessSignupModal";
 import LoginModal from "../LoginModal/LoginModal";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
-
 import NewsCardList from "../NewsCardList/NewsCardList";
 import "./App.css";
 
@@ -38,37 +39,48 @@ function App() {
 
   return (
     <div className="app">
-      <Header
-        onSignUp={openRegisterModal}
-        onSignIn={openLoginModal}
-        setSearchQuery={setSearchQuery}
-      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header
+                onSignUp={openRegisterModal}
+                onSignIn={openLoginModal}
+                setSearchQuery={setSearchQuery}
+              />
 
-      <RegisterModal
-        isOpen={isRegisterOpen}
-        onClose={closeAllModals}
-        onRegister={handleRegister}
-        openLoginModal={() => {
-          closeAllModals();
-          openLoginModal();
-        }}
-      />
+              <RegisterModal
+                isOpen={isRegisterOpen}
+                onClose={closeAllModals}
+                onRegister={handleRegister}
+                openLoginModal={() => {
+                  closeAllModals();
+                  openLoginModal();
+                }}
+              />
 
-      <LoginModal
-        isOpen={isLoginOpen}
-        onClose={closeAllModals}
-        onLogin={handleLogin}
-        openRegisterModal={() => {
-          closeAllModals();
-          openRegisterModal();
-        }}
-      />
+              <LoginModal
+                isOpen={isLoginOpen}
+                onClose={closeAllModals}
+                onLogin={handleLogin}
+                openRegisterModal={() => {
+                  closeAllModals();
+                  openRegisterModal();
+                }}
+              />
 
-      <SuccessModal isOpen={isSuccessOpen} onClose={closeAllModals} />
+              <SuccessModal isOpen={isSuccessOpen} onClose={closeAllModals} />
 
-      <NewsCardList searchQuery={searchQuery} />
-      <About />
-      <Footer />
+              <NewsCardList searchQuery={searchQuery} />
+              <About />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route path="/saved-articles" element={<SavedArticles />} />
+      </Routes>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { useAuth } from "../../Context/AuthContext";
 import "./LoginModal.css";
 
 function LoginModal({ isOpen, onClose, onLogin, openRegisterModal }) {
@@ -13,6 +14,8 @@ function LoginModal({ isOpen, onClose, onLogin, openRegisterModal }) {
     setIsFormValid(email.includes("@") && password.length >= 6);
   }, [email, password]);
 
+  const { login } = useAuth();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -25,8 +28,8 @@ function LoginModal({ isOpen, onClose, onLogin, openRegisterModal }) {
 
       if (data.length > 0) {
         console.log("Login successful:", data[0]);
-        alert(`Welcome, ${data[0].name}!`);
-        onClose(); // Close the modal on successful login
+        login(data[0]);
+        onClose();
       } else {
         console.error("Invalid credentials");
         setError("Invalid email or password");
