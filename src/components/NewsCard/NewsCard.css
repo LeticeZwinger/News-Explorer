@@ -22,7 +22,7 @@
 }
 
 .newscard__bookmark-btn {
-  background: url("../../assets/bookmark-unsaved.svg") center no-repeat;
+  background: url(../../assets/bookmark-unsaved.svg) center no-repeat;
   background-size: contain;
   width: 30px;
   height: 30px;
@@ -100,7 +100,7 @@
 }
 
 .newscard__bookmark-btn_saved {
-  background: url("../../assets/bookmark-saved.svg") center no-repeat;
+  background: url(../../assets/bookmark-saved.svg) center no-repeat;
   background-size: contain;
 }
 

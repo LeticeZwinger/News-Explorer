@@ -1,26 +1,45 @@
-import { useState, useEffect } from "react";
-import { useAuth } from "../../Context/AuthContext";
+import { useEffect, useState } from "react";
+
+import NewsCard from "../NewsCard/NewsCard";
 import Navigator from "../Navigator/Navigator";
 import Footer from "../Footer/Footer";
 import "./SavedArticles.css";
 
 function SavedArticles() {
-  const { user } = useAuth();
   const [savedArticles, setSavedArticles] = useState([]);
 
   useEffect(() => {
-    const articles = JSON.parse(localStorage.getItem("savedArticles")) || [];
-    setSavedArticles(articles);
+    const storedArticles =
+      JSON.parse(localStorage.getItem("savedArticles")) || [];
+    setSavedArticles(storedArticles);
   }, []);
 
   return (
-    <section className="saved-articles">
-      <h2>Saved Articles</h2>
-      <p>
-        {user?.name}, you have {savedArticles.length} article
-        {savedArticles.length !== 1 && "s"} saved.
-      </p>
-    </section>
+    <div className="saved-articles-page">
+      <Navigator />
+      <section className="newscard-list">
+        <h2 className="newscard-list__header">Saved Articles</h2>
+        <section className="newscard-list__section">
+          {savedArticles.length > 0 ? (
+            savedArticles.map((article, index) => (
+              <NewsCard
+                key={index}
+                title={article.title}
+                text={article.text}
+                image={article.image}
+                date={article.date}
+                source={article.source}
+              />
+            ))
+          ) : (
+            <p className="saved-articles__empty">
+              You have no saved articles yet.
+            </p>
+          )}
+        </section>
+      </section>
+      <Footer />
+    </div>
   );
 }
 

@@ -64,17 +64,6 @@
   color: white;
 }
 
-.navigator__home-btn::after {
-  content: "";
-  display: block;
-  width: 68px;
-  height: 3px;
-  background-color: white;
-  position: absolute;
-  bottom: -18px;
-  left: -10px;
-}
-
 .navigator__signin-btn {
   display: inline-block;
   padding: 10px 50px;
@@ -96,31 +85,22 @@
   background: none;
   border: none;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   justify-content: center;
 }
 
-/* .navigator__saved-articles::after:hover {
-  content: "";
-  display: block;
-  width: 68px;
-  height: 3px;
-  background-color: white;
-  position: absolute;
-  bottom: -18px;
-  left: -10px;
-} */
 .navigator__user-info {
   display: inline-block;
-  padding: 10px 50px;
+
+  padding: 10px 40px;
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 15px;
   color: white;
   border: 1px solid white;
   border-radius: 50px;
@@ -129,12 +109,57 @@
 .navigator__logout-icon {
   width: 20px;
   height: 20px;
-  background: url(../../assets/logout.svg) center no-repeat;
   background-size: contain;
   cursor: pointer;
   transition: opacity 0.3s;
 }
 
+.navigator--saved-articles .navigator__home-btn,
+.navigator--saved-articles .navigator__signin-btn,
+.navigator--saved-articles .navigator__saved-articles,
+.navigator--saved-articles .navigator__user-info {
+  color: #1a1b22;
+  border-color: #1a1b22;
+}
+.navigator--saved-articles .navigator__logo {
+  color: #1a1b22;
+  border: none;
+}
+
+.navigator--saved-articles .navigator__home-btn::after {
+  background-color: #1a1b22;
+}
+
+.navigator__logout-icon_white {
+  background: url(../../assets/logout-white.svg) center no-repeat;
+}
+
+.navigator__logout-icon_dark {
+  background: url(../../assets/logout-dark.svg) center no-repeat;
+}
+
 .navigator__logout-icon:hover {
   opacity: 0.7;
+}
+
+.navigator__home-btn_active::after {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 3px;
+  background-color: currentColor;
+  position: absolute;
+  bottom: -18px;
+  left: -10px;
+}
+
+.navigator__saved-articles_active::after {
+  content: "";
+  display: block;
+  width: 143px;
+  height: 3px;
+  background-color: currentColor;
+  position: absolute;
+  bottom: 0px;
+  right: 335px;
 }

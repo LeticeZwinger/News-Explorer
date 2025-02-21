@@ -1,10 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import "./Navigator.css";
 
 function Navigator({ onSignIn }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isSavedArticlesPage = location.pathname === "/saved-articles";
 
   const handleLogout = () => {
     logout();
@@ -12,7 +15,11 @@ function Navigator({ onSignIn }) {
   };
 
   return (
-    <nav className="navigator">
+    <nav
+      className={`navigator ${
+        isSavedArticlesPage ? "navigator--saved-articles" : ""
+      }`}
+    >
       <div className="navigator__container">
         <h2 className="navigator__logo">NewsExplorer</h2>
       </div>
@@ -21,7 +28,9 @@ function Navigator({ onSignIn }) {
         <ul className="navigator__link">
           <li className="navigator__items">
             <button
-              className="navigator__home-btn"
+              className={`navigator__home-btn ${
+                isSavedArticlesPage ? "" : "navigator__home-btn_active"
+              }`}
               onClick={() => navigate("/")}
             >
               Home
@@ -38,7 +47,11 @@ function Navigator({ onSignIn }) {
             <>
               <li>
                 <button
-                  className="navigator__saved-articles"
+                  className={`navigator__saved-articles ${
+                    isSavedArticlesPage
+                      ? "navigator__saved-articles_active"
+                      : ""
+                  }`}
                   onClick={() => navigate("/saved-articles")}
                 >
                   Saved articles
@@ -47,7 +60,11 @@ function Navigator({ onSignIn }) {
               <li className="navigator__user-info">
                 {user.name}
                 <span
-                  className="navigator__logout-icon"
+                  className={`navigator__logout-icon ${
+                    isSavedArticlesPage
+                      ? "navigator__logout-icon_dark"
+                      : "navigator__logout-icon_white"
+                  }`}
                   onClick={handleLogout}
                 />
               </li>
