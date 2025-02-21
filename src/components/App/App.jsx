@@ -17,6 +17,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const openRegisterModal = () => setIsRegisterOpen(true);
+
   const openLoginModal = () => setIsLoginOpen(true);
   const openSuccessModal = () => setIsSuccessOpen(true);
 
@@ -70,7 +71,10 @@ function App() {
                 }}
               />
 
-              <SuccessModal isOpen={isSuccessOpen} onClose={closeAllModals} />
+              <SuccessModal
+                isOpen={isSuccessOpen}
+                onClose={() => setIsSuccessOpen(false)}
+              />
 
               <NewsCardList searchQuery={searchQuery} />
               <About />

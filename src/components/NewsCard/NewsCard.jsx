@@ -1,10 +1,13 @@
 import "./NewsCard.css";
 import { useAuth } from "../../Context/AuthContext";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
-function NewsCard({ title, text, image, date, source }) {
+function NewsCard({ title, text, image, date, source, onRemove }) {
   const { user } = useAuth();
   const [isSaved, setIsSaved] = useState(false);
+  const location = useLocation();
+  const isSavedArticlesPage = location.pathname === "/saved-articles";
 
   const handleSaveClick = () => {
     if (!user) {
@@ -30,23 +33,39 @@ function NewsCard({ title, text, image, date, source }) {
     }
   };
 
+  const handleRemove = () => {
+    if (isSavedArticlesPage && onRemove) {
+      onRemove();
+    }
+  };
+
   return (
     <div className="newscard">
       <div className="newscard__image-container">
         <img src={image} alt={title} className="newscard__image" />
-        <button
-          className={`newscard__bookmark-btn ${
-            isSaved ? "newscard__bookmark-btn_saved" : ""
-          }`}
-          title="Save article"
-          onClick={handleSaveClick}
-        >
-          {!user && (
-            <span className="newscard__signin-tooltip">
-              Sign in to save articles
-            </span>
-          )}
-        </button>
+
+        {/* Conditional Icon */}
+        {isSavedArticlesPage ? (
+          <button
+            className="newscard__trash-btn"
+            title="Remove article"
+            onClick={handleRemove}
+          />
+        ) : (
+          <button
+            className={`newscard__bookmark-btn ${
+              isSaved ? "newscard__bookmark-btn_saved" : ""
+            }`}
+            title="Save article"
+            onClick={handleSaveClick}
+          >
+            {!user && (
+              <span className="newscard__signin-tip">
+                Sign in to save articles
+              </span>
+            )}
+          </button>
+        )}
       </div>
       <div className="newscard__content">
         <p className="newscard__date">{date}</p>

@@ -14,6 +14,14 @@ function SavedArticles() {
     setSavedArticles(storedArticles);
   }, []);
 
+  const handleRemove = (titleToRemove) => {
+    const updatedArticles = savedArticles.filter(
+      (article) => article.title !== titleToRemove,
+    );
+    setSavedArticles(updatedArticles);
+    localStorage.setItem("savedArticles", JSON.stringify(updatedArticles));
+  };
+
   return (
     <div className="saved-articles-page">
       <Navigator />
@@ -29,6 +37,7 @@ function SavedArticles() {
                 image={article.image}
                 date={article.date}
                 source={article.source}
+                onRemove={() => handleRemove(article.title)}
               />
             ))
           ) : (
