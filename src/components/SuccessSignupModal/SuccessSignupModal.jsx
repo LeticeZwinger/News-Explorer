@@ -12,11 +12,13 @@ function SuccessModal({ isOpen, onClose }) {
       <p className="modal__success-message">
         Registration successfully completed!
       </p>
-      <button className="modal__close-btn" onClick={onClose}>
-        Close
+      <button className="modal__or-signin-btn" onClick={onClose}>
+        Sign in
       </button>
     </Modal>
   );
 }
 
 export default SuccessModal;
+
+//for later when modal is styled

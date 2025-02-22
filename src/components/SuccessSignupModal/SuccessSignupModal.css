@@ -1,0 +1,12 @@
+.modal__container_success {
+  height: 140px;
+  width: 300px;
+}
+
+.modal__success-message {
+  color: #000000;
+  font-family: "Roboto-900";
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 14px;
+}

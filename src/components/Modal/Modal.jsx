@@ -41,6 +41,7 @@ export const Modal = ({
           className="modal__close-button"
           type="button"
           onClick={onClose}
+          title="Close"
         />
       </div>
     </div>
