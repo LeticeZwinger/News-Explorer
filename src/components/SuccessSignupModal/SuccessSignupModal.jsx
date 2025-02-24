@@ -20,5 +20,3 @@ function SuccessModal({ isOpen, onClose }) {
 }
 
 export default SuccessModal;
-
-//for later when modal is styled

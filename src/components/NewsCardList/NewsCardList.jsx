@@ -1,189 +1,65 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NewsCard from "../NewsCard/NewsCard";
+import { getArticles } from "../../utils/newsApi";
 import "./NewsCardList.css";
 
 function NewsCardList({ searchQuery = "" }) {
-  const articles = [
-    {
-      title: "Everyone Needs a Special 'Sit Spot' in Nature",
-      text: "Ever since I read Richard Louv's influential book, 'Last Child in the Woods'...",
-      image:
-        "https://img.freepik.com/premium-vector/serene-hilltop-bench-countryside-vista-wooden-seat-panoramic-view-peaceful-retreat-nature_1197675-19450.jpg",
-      date: "November 4, 2020",
-      source: "Treehugger",
-    },
-    {
-      title: "Nature makes you better",
-      text: "We all know how good nature can make us feel. We've known it for millennia...",
-      image: "https://blog.aspinallfoundation.org/hubfs/Nature.jpeg",
-      date: "February 19, 2019",
-      source: "National Geographic",
-    },
-    {
-      title: "Grand Teton Renews Historic Crest Trail",
-      text: "The linking together of the Cascade and Death Canyon trails at their heades...",
-      image:
-        "https://www.datocms-assets.com/50871/1630355944-winter-scenic-gtnp-jb-20200219-gtnp-9.jpg",
-      date: "October 19, 2020",
-      source: "National Parks Traveler",
-    },
-    {
-      title: "Everyone Needs a Special 'Sit Spot' in Nature",
-      text: "Ever since I read Richard Louv's influential book, 'Last Child in the Woods'...",
-      image:
-        "https://img.freepik.com/premium-vector/serene-hilltop-bench-countryside-vista-wooden-seat-panoramic-view-peaceful-retreat-nature_1197675-19450.jpg",
-      date: "November 4, 2020",
-      source: "Treehugger",
-    },
-    {
-      title: "Nature makes you better",
-      text: "We all know how good nature can make us feel. We've known it for millennia...",
-      image: "https://blog.aspinallfoundation.org/hubfs/Nature.jpeg",
-      date: "February 19, 2019",
-      source: "National Geographic",
-    },
-    {
-      title: "Grand Teton Renews Historic Crest Trail",
-      text: "The linking together of the Cascade and Death Canyon trails at their heades...",
-      image:
-        "https://www.datocms-assets.com/50871/1630355944-winter-scenic-gtnp-jb-20200219-gtnp-9.jpg",
-      date: "October 19, 2020",
-      source: "National Parks Traveler",
-    },
-    {
-      title: "Everyone Needs a Special 'Sit Spot' in Nature",
-      text: "Ever since I read Richard Louv's influential book, 'Last Child in the Woods'...",
-      image:
-        "https://img.freepik.com/premium-vector/serene-hilltop-bench-countryside-vista-wooden-seat-panoramic-view-peaceful-retreat-nature_1197675-19450.jpg",
-      date: "November 4, 2020",
-      source: "Treehugger",
-    },
-    {
-      title: "Nature makes you better",
-      text: "We all know how good nature can make us feel. We've known it for millennia...",
-      image: "https://blog.aspinallfoundation.org/hubfs/Nature.jpeg",
-      date: "February 19, 2019",
-      source: "National Geographic",
-    },
-    {
-      title: "Grand Teton Renews Historic Crest Trail",
-      text: "The linking together of the Cascade and Death Canyon trails at their heades...",
-      image:
-        "https://www.datocms-assets.com/50871/1630355944-winter-scenic-gtnp-jb-20200219-gtnp-9.jpg",
-      date: "October 19, 2020",
-      source: "National Parks Traveler",
-    },
-    {
-      title: "Everyone Needs a Special 'Sit Spot' in Nature",
-      text: "Ever since I read Richard Louv's influential book, 'Last Child in the Woods'...",
-      image:
-        "https://img.freepik.com/premium-vector/serene-hilltop-bench-countryside-vista-wooden-seat-panoramic-view-peaceful-retreat-nature_1197675-19450.jpg",
-      date: "November 4, 2020",
-      source: "Treehugger",
-    },
-    {
-      title: "Nature makes you better",
-      text: "We all know how good nature can make us feel. We've known it for millennia...",
-      image: "https://blog.aspinallfoundation.org/hubfs/Nature.jpeg",
-      date: "February 19, 2019",
-      source: "National Geographic",
-    },
-    {
-      title: "Grand Teton Renews Historic Crest Trail",
-      text: "The linking together of the Cascade and Death Canyon trails at their heades...",
-      image:
-        "https://www.datocms-assets.com/50871/1630355944-winter-scenic-gtnp-jb-20200219-gtnp-9.jpg",
-      date: "October 19, 2020",
-      source: "National Parks Traveler",
-    },
-    {
-      title: "Everyone Needs a Special 'Sit Spot' in Nature",
-      text: "Ever since I read Richard Louv's influential book, 'Last Child in the Woods'...",
-      image:
-        "https://img.freepik.com/premium-vector/serene-hilltop-bench-countryside-vista-wooden-seat-panoramic-view-peaceful-retreat-nature_1197675-19450.jpg",
-      date: "November 4, 2020",
-      source: "Treehugger",
-    },
-    {
-      title: "Nature makes you better",
-      text: "We all know how good nature can make us feel. We've known it for millennia...",
-      image: "https://blog.aspinallfoundation.org/hubfs/Nature.jpeg",
-      date: "February 19, 2019",
-      source: "National Geographic",
-    },
-    {
-      title: "Grand Teton Renews Historic Crest Trail",
-      text: "The linking together of the Cascade and Death Canyon trails at their heades...",
-      image:
-        "https://www.datocms-assets.com/50871/1630355944-winter-scenic-gtnp-jb-20200219-gtnp-9.jpg",
-      date: "October 19, 2020",
-      source: "National Parks Traveler",
-    },
-    {
-      title: "Everyone Needs a Special 'Sit Spot' in Nature",
-      text: "Ever since I read Richard Louv's influential book, 'Last Child in the Woods'...",
-      image:
-        "https://img.freepik.com/premium-vector/serene-hilltop-bench-countryside-vista-wooden-seat-panoramic-view-peaceful-retreat-nature_1197675-19450.jpg",
-      date: "November 4, 2020",
-      source: "Treehugger",
-    },
-    {
-      title: "Nature makes you better",
-      text: "We all know how good nature can make us feel. We've known it for millennia...",
-      image: "https://blog.aspinallfoundation.org/hubfs/Nature.jpeg",
-      date: "February 19, 2019",
-      source: "National Geographic",
-    },
-    {
-      title: "Grand Teton Renews Historic Crest Trail",
-      text: "The linking together of the Cascade and Death Canyon trails at their heades...",
-      image:
-        "https://www.datocms-assets.com/50871/1630355944-winter-scenic-gtnp-jb-20200219-gtnp-9.jpg",
-      date: "October 19, 2020",
-      source: "National Parks Traveler",
-    },
-  ];
-
+  const [articles, setArticles] = useState([]);
   const [visibleCount, setVisibleCount] = useState(3);
+  const [loading, setLoading] = useState(false);
 
-  const filteredArticles = searchQuery
-    ? articles.filter((article) =>
-        article.title
-          .toLowerCase()
-          .includes(searchQuery.toString().toLowerCase()),
-      )
-    : [];
+  // Fetch articles when searchQuery changes
+  useEffect(() => {
+    const fetchArticles = async () => {
+      if (searchQuery) {
+        setLoading(true);
+        const fetchedArticles = await getArticles(searchQuery);
+        setArticles(fetchedArticles);
+        setVisibleCount(3); // Reset visible count when new search happens
+        setLoading(false);
+      } else {
+        setArticles([]); // Clear articles if search query is empty
+      }
+    };
 
-  const displayedArticles = filteredArticles.slice(0, visibleCount);
+    fetchArticles();
+  }, [searchQuery]);
+
+  // Slice articles to show based on visibleCount
+  const displayedArticles = articles.slice(0, visibleCount);
 
   return (
     <div className="newscard-list">
-      {filteredArticles.length > 0 && (
+      {articles.length > 0 && (
         <div className="newscard-list__header">Search Results</div>
       )}
 
-      <section className="newscard-list__section">
-        {displayedArticles.map((article, index) => (
-          <NewsCard
-            key={index}
-            title={article.title}
-            text={article.text}
-            image={article.image}
-            date={article.date}
-            source={article.source}
-          />
-        ))}
-      </section>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <section className="newscard-list__section">
+          {displayedArticles.map((article, index) => (
+            <NewsCard
+              key={index}
+              title={article.title}
+              text={article.description}
+              image={article.urlToImage}
+              date={new Date(article.publishedAt).toDateString()}
+              source={article.source.name}
+            />
+          ))}
+        </section>
+      )}
 
-      {filteredArticles.length > visibleCount && (
+      {articles.length > visibleCount && (
         <button
           className={`newscard-list__show-more ${
-            visibleCount >= filteredArticles.length
+            visibleCount >= articles.length
               ? "newscard-list__show-more_disabled"
               : ""
           }`}
           onClick={() => setVisibleCount((prev) => prev + 3)}
-          disabled={visibleCount >= filteredArticles.length}
+          disabled={visibleCount >= articles.length}
         >
           Show More
         </button>
