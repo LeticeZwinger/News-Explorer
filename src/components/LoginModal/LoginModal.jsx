@@ -1,42 +1,35 @@
 import { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useAuth } from "../../Context/AuthContext";
+import { authorize } from "../../utils/auth";
 import "./LoginModal.css";
 
-function LoginModal({ isOpen, onClose, onLogin, openRegisterModal }) {
+function LoginModal({ isOpen, onClose, openRegisterModal }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const { login } = useAuth();
+
   useEffect(() => {
     setIsFormValid(email.includes("@") && password.length >= 6);
   }, [email, password]);
-
-  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      const response = await fetch(
-        `http://localhost:5001/users?email=${email}&password=${password}`,
-      );
-      const data = await response.json();
+      const response = await authorize(email, password);
 
-      if (data.length > 0) {
-        console.log("Login successful:", data[0]);
-        login(data[0]);
-        onClose();
-      } else {
-        console.error("Invalid credentials");
-        setError("Invalid email or password");
-      }
+      login(response.user);
+
+      onClose();
     } catch (err) {
       console.error("Login failed:", err);
-      setError("Something went wrong. Please try again.");
+      setError(err.message);
     } finally {
       setLoading(false);
     }

@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { register } from "../../utils/auth";
+import { useAuth } from "../../Context/AuthContext";
 import "./RegisterModal.css";
 import "../ModalWithForm/ModalWithForm.css";
-function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
+
+function RegisterModal({ isOpen, onClose, openLoginModal }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setIsFormValid(
@@ -14,15 +19,29 @@ function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
     );
   }, [email, password, name]);
 
-  const handleSubmit = (e) => {
+  const { login } = useAuth();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onRegister({ email, password, name });
+    setLoading(true);
+
+    try {
+      const response = await register(name, email, password);
+      console.log("Registration successful:", response);
+      login(response.user);
+      onClose();
+    } catch (err) {
+      console.error("Registration failed:", err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <ModalWithForm
       title="Sign Up"
-      buttonText="Sign Up"
+      buttonText={loading ? "Signing Up..." : "Sign Up"}
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
@@ -72,6 +91,7 @@ function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
           placeholder="Name"
         />
       </label>
+      {error && <p className="modal__error">{error}</p>}
     </ModalWithForm>
   );
 }
