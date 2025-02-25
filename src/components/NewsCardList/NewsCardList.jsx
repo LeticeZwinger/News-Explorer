@@ -1,55 +1,64 @@
 import { useState, useEffect } from "react";
 import NewsCard from "../NewsCard/NewsCard";
-import { getArticles } from "../../utils/newsApi";
+import { fetchArticles } from "../../utils/newsApi";
 import "./NewsCardList.css";
 
 function NewsCardList({ searchQuery = "" }) {
   const [articles, setArticles] = useState([]);
   const [visibleCount, setVisibleCount] = useState(3);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [noResults, setNoResults] = useState(false);
 
-  // Fetch articles when searchQuery changes
   useEffect(() => {
-    const fetchArticles = async () => {
-      if (searchQuery) {
-        setLoading(true);
-        const fetchedArticles = await getArticles(searchQuery);
-        setArticles(fetchedArticles);
-        setVisibleCount(3); // Reset visible count when new search happens
-        setLoading(false);
-      } else {
-        setArticles([]); // Clear articles if search query is empty
-      }
-    };
+    if (!searchQuery) return;
+    setLoading(true);
+    setError("");
+    setNoResults(false);
 
-    fetchArticles();
+    fetchArticles(searchQuery)
+      .then((fetchedArticles) => {
+        if (fetchedArticles.length === 0) {
+          setNoResults(true);
+        } else {
+          setArticles(fetchedArticles);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching articles:", error);
+        setError(
+          error.message.includes("Failed to fetch")
+            ? "Network error. Please check your connection."
+            : "Sorry, something went wrong. Please try again later.",
+        );
+      })
+      .finally(() => setLoading(false));
   }, [searchQuery]);
 
-  // Slice articles to show based on visibleCount
   const displayedArticles = articles.slice(0, visibleCount);
 
   return (
     <div className="newscard-list">
-      {articles.length > 0 && (
-        <div className="newscard-list__header">Search Results</div>
-      )}
+      {loading && <p className="newscard-list__loading">Loading...</p>}
+      {error && <p className="newscard-list__error">{error}</p>}
+      {noResults && <p className="newscard-list__no-results">Nothing Found</p>}
 
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <section className="newscard-list__section">
-          {displayedArticles.map((article, index) => (
-            <NewsCard
-              key={index}
-              title={article.title}
-              text={article.description}
-              image={article.urlToImage}
-              date={new Date(article.publishedAt).toDateString()}
-              source={article.source.name}
-            />
-          ))}
-        </section>
-      )}
+      <section className="newscard-list__section">
+        {displayedArticles.map((article, index) => (
+          <NewsCard
+            key={index}
+            title={article.title}
+            text={article.description}
+            image={article.urlToImage}
+            date={new Date(article.publishedAt).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+            source={article.source.name}
+          />
+        ))}
+      </section>
 
       {articles.length > visibleCount && (
         <button
