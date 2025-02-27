@@ -47,7 +47,6 @@
   font-weight: 500;
 }
 
-/* Icon Styling */
 .footer__icon-img {
   width: 24px;
   height: 24px;
@@ -56,4 +55,23 @@
 
 .footer__icon-img:hover {
   opacity: 0.7;
+}
+
+/* tablet */
+@media screen and (max-width: 1024px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* phone */
+@media screen and (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
 }

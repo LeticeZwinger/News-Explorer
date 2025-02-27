@@ -133,3 +133,13 @@
 .newscard__bookmark-btn:hover .newscard__signin-tooltip {
   display: block;
 }
+
+@media screen and (max-width: 600px) {
+  .newscard {
+    width: 100%;
+  }
+
+  .newscard-list__section {
+    grid-template-columns: 1fr;
+  }
+}

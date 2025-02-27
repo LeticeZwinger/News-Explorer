@@ -163,3 +163,21 @@
   bottom: 0px;
   right: 290px;
 }
+/* tablet  */
+@media screen and (max-width: 1024px) {
+  .navigator {
+    padding: 0 50px;
+  }
+}
+/* phone  */
+@media screen and (max-width: 600px) {
+  .navigator {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigator__right-side {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
