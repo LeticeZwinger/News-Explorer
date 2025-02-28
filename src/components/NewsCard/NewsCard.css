@@ -38,15 +38,22 @@
 .newscard__signin-tip {
   display: none;
   position: absolute;
-  top: 10px;
-  right: 50px;
-  background-color: #fff;
-  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 5px 10px;
-  font-size: 14px;
-  color: #333;
+  background-color: #fff;
+  border-radius: 5.5px;
+  top: 1px;
+  right: 35px;
+  padding: 7px 15px;
+  font-size: 12px;
+  color: #1a1b22;
   white-space: nowrap;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.newscard__bookmark-btn:hover .newscard__signin-tip {
+  display: block;
+  opacity: 1;
 }
 
 .newscard__content {
@@ -97,9 +104,9 @@
   margin: 0;
 }
 
-.newscard__bookmark-btn_saved {
-  background: url(../../assets/bookmark-saved.svg) center no-repeat;
-  background-size: contain;
+.newscard__bookmark-btn:hover {
+  background-image: url(../../assets/bookmark-hover.svg);
+  transform: scale(1.1);
 }
 
 .newscard__trash-btn {
@@ -118,21 +125,8 @@
 .newscard__trash-btn:hover {
   opacity: 0.9;
 }
-.newscard__signin-to-save {
-  font-family: "Roboto", sans-serif;
-  max-height: 40px;
-  background-color: #fff;
-  max-width: 175px;
-  text-align: center;
-  font-size: 12px;
-  line-height: 14.06px;
-  font-weight: 500;
-  padding: 13px 15px;
-  border-radius: 8px;
-  color: #000;
-}
 
-.newscard__bookmark-btn:hover .newscard__signin-tooltip {
+.newscard__bookmark-btn:hover {
   display: block;
 }
 
