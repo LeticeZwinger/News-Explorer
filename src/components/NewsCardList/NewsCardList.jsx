@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import NewsCard from "../NewsCard/NewsCard";
 import { fetchArticles } from "../../utils/newsApi";
+import Preloader from "../Preloader/Preloader";
 import "./NewsCardList.css";
 
 function NewsCardList({ searchQuery = "" }) {
@@ -39,9 +40,17 @@ function NewsCardList({ searchQuery = "" }) {
 
   return (
     <div className="newscard-list">
-      {loading && <p className="newscard-list__loading">Loading...</p>}
+      {loading && <Preloader />}
       {error && <p className="newscard-list__error">{error}</p>}
-      {noResults && <p className="newscard-list__no-results">Nothing Found</p>}
+
+      {noResults && (
+        <div className="newscard-list__nothing-found">
+          <h3 className="newscard-list__nothing-title">Nothing Found</h3>
+          <p className="newscard-list__nothing-text">
+            Sorry, but nothing matches your search terms.
+          </p>
+        </div>
+      )}
 
       <section className="newscard-list__section">
         {displayedArticles.map((article, index) => (

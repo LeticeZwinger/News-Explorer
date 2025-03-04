@@ -1,20 +1,31 @@
-.circle-preloader {
-  display: block;
+.preloader__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: rgba(182, 188, 191, 1);
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  margin-top: 20px;
+}
+
+.preloader__circle {
   width: 50px;
   height: 50px;
-  border: 4px solid #444;
+  border: 1px solid #444;
   border-bottom-color: #888;
   border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  animation: spin 0.75s infinite linear;
+  animation: spin 0.9s infinite linear;
 }
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.preloader__text {
+  margin-top: 24px;
+  font-size: 18px;
 }
