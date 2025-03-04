@@ -12,7 +12,13 @@ function SuccessModal({ isOpen, onClose, openLoginModal }) {
       <p className="modal__success-message">
         Registration successfully completed!
       </p>
-      <button className="modal__or-signin-btn" onClick={openLoginModal}>
+      <button
+        className="modal__or-signin-btn"
+        onClick={() => {
+          onClose();
+          openLoginModal();
+        }}
+      >
         Sign in
       </button>
     </Modal>

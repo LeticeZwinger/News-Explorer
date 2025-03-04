@@ -14,7 +14,7 @@ function LoginModal({ isOpen, onClose, openRegisterModal }) {
   const { login } = useAuth();
 
   useEffect(() => {
-    setIsFormValid(email.includes("@") && password.length >= 6);
+    setIsFormValid(email.includes("@") && password.length >= 3);
   }, [email, password]);
 
   const handleSubmit = async (e) => {
@@ -23,9 +23,7 @@ function LoginModal({ isOpen, onClose, openRegisterModal }) {
 
     try {
       const response = await authorize(email, password);
-
       login(response.user);
-
       onClose();
     } catch (err) {
       console.error("Login failed:", err);

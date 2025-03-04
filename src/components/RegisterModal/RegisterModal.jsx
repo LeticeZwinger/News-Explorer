@@ -28,6 +28,7 @@ function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
       console.log("Registration successful:", response);
 
       onClose();
+      onRegister();
     } catch (err) {
       console.error("Registration failed:", err);
       setError(err.message);

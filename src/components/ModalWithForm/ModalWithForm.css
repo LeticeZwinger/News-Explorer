@@ -62,7 +62,8 @@
 }
 
 .modal__submit_disabled {
-  /* background-color: rgba(230, 232, 235, 1); */
+  background-color: rgba(230, 232, 235, 1);
+  pointer-events: none;
 }
 
 .modal__submit:hover {
