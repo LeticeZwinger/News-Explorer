@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { register } from "../../utils/auth";
-import { useAuth } from "../../Context/AuthContext";
 import "./RegisterModal.css";
 import "../ModalWithForm/ModalWithForm.css";
 
@@ -14,6 +13,15 @@ function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    if (!isOpen) {
+      setEmail("");
+      setPassword("");
+      setName("");
+      setError("");
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
     setIsFormValid(
       email.includes("@") && password.length >= 4 && name.trim() !== "",
     );
@@ -24,10 +32,8 @@ function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
     setLoading(true);
 
     try {
-      const response = await register(name, email, password);
-
+      await register(name, email, password);
       onClose();
-      onRegister();
     } catch (err) {
       console.error("Registration failed:", err);
       setError(err.message);
