@@ -74,8 +74,11 @@ function App() {
               <SuccessModal
                 isOpen={isSuccessOpen}
                 onClose={() => setIsSuccessOpen(false)}
+                openLoginModal={() => {
+                  setIsSuccessOpen(false);
+                  openLoginModal();
+                }}
               />
-
               <NewsCardList searchQuery={searchQuery} />
               <About />
               <Footer />

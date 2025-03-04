@@ -5,7 +5,7 @@ import { useAuth } from "../../Context/AuthContext";
 import "./RegisterModal.css";
 import "../ModalWithForm/ModalWithForm.css";
 
-function RegisterModal({ isOpen, onClose, openLoginModal }) {
+function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -19,17 +19,14 @@ function RegisterModal({ isOpen, onClose, openLoginModal }) {
     );
   }, [email, password, name]);
 
-  const { login } = useAuth();
-
   const handleSubmit = async (e) => {
-    console.log("ta prestando???");
     e.preventDefault();
     setLoading(true);
 
     try {
       const response = await register(name, email, password);
       console.log("Registration successful:", response);
-      login(response.user);
+
       onClose();
     } catch (err) {
       console.error("Registration failed:", err);
