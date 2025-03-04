@@ -17,20 +17,17 @@ function NewsCard({ title, text, image, date, source, keyword, onRemove }) {
     const updatedSavedState = !isSaved;
     setIsSaved(updatedSavedState);
 
+    const userKey = `savedArticles_${user.email}`;
+    let savedArticles = JSON.parse(localStorage.getItem(userKey)) || [];
+
     if (updatedSavedState) {
-      const savedArticles =
-        JSON.parse(localStorage.getItem("savedArticles")) || [];
-      const article = { title, text, image, date, source, keyword };
+      const article = { title, text, image, date, source };
       savedArticles.push(article);
-      localStorage.setItem("savedArticles", JSON.stringify(savedArticles));
     } else {
-      const savedArticles =
-        JSON.parse(localStorage.getItem("savedArticles")) || [];
-      const updatedArticles = savedArticles.filter(
-        (item) => item.title !== title,
-      );
-      localStorage.setItem("savedArticles", JSON.stringify(updatedArticles));
+      savedArticles = savedArticles.filter((item) => item.title !== title);
     }
+
+    localStorage.setItem(userKey, JSON.stringify(savedArticles));
   };
 
   const handleRemove = () => {
@@ -55,7 +52,7 @@ function NewsCard({ title, text, image, date, source, keyword, onRemove }) {
           <button
             className="newscard__trash-btn"
             title="Remove article"
-            onClick={handleRemove}
+            onClick={onRemove}
           >
             <span className="newscard__trash-tooltip">Remove from saved</span>
           </button>

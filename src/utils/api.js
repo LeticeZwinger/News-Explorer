@@ -7,12 +7,15 @@ let savedArticles = [
     date: "2025-02-01",
     source: "Example Source",
     link: "https://example.com",
+    keyword: "",
   },
 ];
 
 export const getSavedArticles = () => {
   return new Promise((resolve) => {
-    resolve(savedArticles);
+    const storedArticles =
+      JSON.parse(localStorage.getItem("savedArticles")) || [];
+    resolve(storedArticles);
   });
 };
 
@@ -21,6 +24,7 @@ export const saveArticle = (article) => {
     const newArticle = {
       ...article,
       _id: Math.random().toString(36).substring(2, 9),
+      keyword: article.keyword || "General",
     };
     savedArticles.push(newArticle);
     localStorage.setItem("savedArticles", JSON.stringify(savedArticles));
