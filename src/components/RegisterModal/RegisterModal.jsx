@@ -15,13 +15,14 @@ function RegisterModal({ isOpen, onClose, openLoginModal }) {
 
   useEffect(() => {
     setIsFormValid(
-      email.includes("@") && password.length >= 6 && name.trim() !== "",
+      email.includes("@") && password.length >= 4 && name.trim() !== "",
     );
   }, [email, password, name]);
 
   const { login } = useAuth();
 
   const handleSubmit = async (e) => {
+    console.log("ta prestando???");
     e.preventDefault();
     setLoading(true);
 

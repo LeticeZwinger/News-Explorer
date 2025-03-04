@@ -1,0 +1,39 @@
+.saved-articles-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.saved-articles__content {
+  flex: 1;
+}
+
+.saved-articles__title {
+  margin-left: 104px;
+  margin-top: 40px;
+  color: rgba(26, 27, 34, 0.5);
+  font-family: "Roboto-slab-400";
+  font-size: 18px;
+}
+
+.saved-articles__header {
+  margin: 30px auto 28px 104px;
+  font-family: "Roboto-slab-400";
+  color: rgba(26, 27, 34, 1);
+  font-size: 40px;
+  width: 530px;
+}
+
+.saved-articles__keywords {
+  font-family: "Roboto";
+  margin-left: 104px;
+  font-size: 18px;
+  margin-bottom: 56px;
+}
+
+.saved-articles__empty {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  margin-top: 50px;
+}

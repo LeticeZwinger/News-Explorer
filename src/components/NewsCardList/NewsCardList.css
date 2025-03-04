@@ -12,8 +12,8 @@
 
 .newscard-list__header {
   align-self: flex-start;
-  font-size: 24px;
-  font-weight: bold;
+  color: rgba(26, 27, 34, 0.5);
+  font-size: 18px;
   margin-bottom: 20px;
 }
 
@@ -22,7 +22,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   width: 100%;
-  max-width: 1240px; /* Adjust to fit 3 cards with gaps */
+  max-width: 1240px;
   margin: 0 auto;
 }
 

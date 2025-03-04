@@ -3,7 +3,7 @@ import { useAuth } from "../../Context/AuthContext";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-function NewsCard({ title, text, image, date, source, onRemove }) {
+function NewsCard({ title, text, image, date, source, keyword, onRemove }) {
   const { user } = useAuth();
   const [isSaved, setIsSaved] = useState(false);
   const location = useLocation();
@@ -20,7 +20,7 @@ function NewsCard({ title, text, image, date, source, onRemove }) {
     if (updatedSavedState) {
       const savedArticles =
         JSON.parse(localStorage.getItem("savedArticles")) || [];
-      const article = { title, text, image, date, source };
+      const article = { title, text, image, date, source, keyword };
       savedArticles.push(article);
       localStorage.setItem("savedArticles", JSON.stringify(savedArticles));
     } else {
@@ -34,7 +34,14 @@ function NewsCard({ title, text, image, date, source, onRemove }) {
   };
 
   const handleRemove = () => {
-    if (isSavedArticlesPage && onRemove) {
+    if (isSavedArticlesPage) {
+      const savedArticles =
+        JSON.parse(localStorage.getItem("savedArticles")) || [];
+      const updatedArticles = savedArticles.filter(
+        (item) => item.title !== title,
+      );
+
+      localStorage.setItem("savedArticles", JSON.stringify(updatedArticles));
       onRemove();
     }
   };
@@ -44,13 +51,14 @@ function NewsCard({ title, text, image, date, source, onRemove }) {
       <div className="newscard__image-container">
         <img src={image} alt={title} className="newscard__image" />
 
-        {/* Conditional Icon */}
         {isSavedArticlesPage ? (
           <button
             className="newscard__trash-btn"
             title="Remove article"
             onClick={handleRemove}
-          />
+          >
+            <span className="newscard__trash-tooltip">Remove from saved</span>
+          </button>
         ) : (
           <button
             className={`newscard__bookmark-btn ${
