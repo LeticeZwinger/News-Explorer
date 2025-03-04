@@ -3,31 +3,48 @@ import { useAuth } from "../../Context/AuthContext";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-function NewsCard({ title, text, image, date, source, keyword, onRemove }) {
+function NewsCard({
+  title,
+  text,
+  image,
+  date,
+  source,
+
+  searchQuery,
+  onRemove,
+}) {
   const { user } = useAuth();
   const [isSaved, setIsSaved] = useState(false);
   const location = useLocation();
   const isSavedArticlesPage = location.pathname === "/saved-articles";
 
   const handleSaveClick = () => {
-    if (!user) {
-      return;
-    }
+    if (!user) return;
 
     const updatedSavedState = !isSaved;
     setIsSaved(updatedSavedState);
 
     const userKey = `savedArticles_${user.email}`;
-    let savedArticles = JSON.parse(localStorage.getItem(userKey)) || [];
+    const savedArticles = JSON.parse(localStorage.getItem(userKey)) || [];
 
     if (updatedSavedState) {
-      const article = { title, text, image, date, source };
-      savedArticles.push(article);
-    } else {
-      savedArticles = savedArticles.filter((item) => item.title !== title);
-    }
+      const article = {
+        title,
+        text,
+        image,
+        date,
+        source,
+        keyword: searchQuery,
+      };
 
-    localStorage.setItem(userKey, JSON.stringify(savedArticles));
+      savedArticles.push(article);
+      localStorage.setItem(userKey, JSON.stringify(savedArticles));
+    } else {
+      const updatedArticles = savedArticles.filter(
+        (item) => item.title !== title,
+      );
+      localStorage.setItem(userKey, JSON.stringify(updatedArticles));
+    }
   };
 
   const handleRemove = () => {

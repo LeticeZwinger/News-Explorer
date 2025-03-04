@@ -28,13 +28,11 @@ function App() {
   };
 
   const handleRegister = async (userData) => {
-    console.log("Registering:", userData);
     setIsRegisterOpen(false);
     setIsSuccessOpen(true);
   };
 
   const handleLogin = async (loginData) => {
-    console.log("Logging in:", loginData);
     setIsLoginOpen(false);
   };
 

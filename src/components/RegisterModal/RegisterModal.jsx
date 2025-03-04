@@ -25,7 +25,6 @@ function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
 
     try {
       const response = await register(name, email, password);
-      console.log("Registration successful:", response);
 
       onClose();
       onRegister();

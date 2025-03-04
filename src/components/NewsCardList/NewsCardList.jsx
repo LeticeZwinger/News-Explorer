@@ -56,6 +56,7 @@ function NewsCardList({ searchQuery = "" }) {
               day: "numeric",
             })}
             source={article.source.name}
+            searchQuery={searchQuery}
           />
         ))}
       </section>

@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 import "./SavedArticles.css";
 
 function SavedArticles() {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const [savedArticles, setSavedArticles] = useState([]);
   const [keywords, setKeywords] = useState([]);
 
@@ -23,21 +23,11 @@ function SavedArticles() {
 
     const extractedKeywords = storedArticles
       .map((article) => article.keyword)
-      .filter((keyword) => keyword);
+      .filter((keyword) => keyword && keyword.trim() !== "");
 
     const uniqueKeywords = [...new Set(extractedKeywords)];
     setKeywords(uniqueKeywords);
   }, [user]);
-
-  const loadSavedArticles = () => {
-    const storedArticles =
-      JSON.parse(localStorage.getItem("savedArticles")) || [];
-    setSavedArticles(storedArticles);
-
-    const extractedKeywords = storedArticles.map((article) => article.keyword);
-    const uniqueKeywords = [...new Set(extractedKeywords)];
-    setKeywords(uniqueKeywords);
-  };
 
   const handleRemoveArticle = (articleToRemove) => {
     if (!user) return;
@@ -46,11 +36,16 @@ function SavedArticles() {
     const storedArticles = JSON.parse(localStorage.getItem(userKey)) || [];
 
     const updatedArticles = storedArticles.filter(
-      (article) => article.title !== articleToRemove.title,
+      (article) => article._id !== articleToRemove._id,
     );
 
     localStorage.setItem(userKey, JSON.stringify(updatedArticles));
     setSavedArticles(updatedArticles);
+
+    const remainingKeywords = [
+      ...new Set(updatedArticles.map((a) => a.keyword)),
+    ];
+    setKeywords(remainingKeywords);
   };
 
   const formatKeywords = () => {

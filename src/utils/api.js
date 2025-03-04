@@ -19,15 +19,21 @@ export const getSavedArticles = () => {
   });
 };
 
-export const saveArticle = (article) => {
+export const saveArticle = (article, searchQuery, userEmail) => {
   return new Promise((resolve) => {
     const newArticle = {
       ...article,
       _id: Math.random().toString(36).substring(2, 9),
-      keyword: article.keyword || "General",
+      keyword: searchQuery,
+      userEmail: userEmail,
     };
+
+    const userKey = `savedArticles_${userEmail}`;
+    const savedArticles = JSON.parse(localStorage.getItem(userKey)) || [];
+
     savedArticles.push(newArticle);
-    localStorage.setItem("savedArticles", JSON.stringify(savedArticles));
+    localStorage.setItem(userKey, JSON.stringify(savedArticles));
+
     resolve(newArticle);
   });
 };

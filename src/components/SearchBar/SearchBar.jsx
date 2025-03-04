@@ -6,7 +6,7 @@ function SearchBar({ setSearchQuery }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Search Query Submitted:", input);
+
     setSearchQuery(input);
   };
 
