@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext";
 import SavedArticles from "../SavedArticles/SavedArticles";
 import Header from "../Header/Header";
 import RegisterModal from "../RegisterModal/RegisterModal";
@@ -15,11 +16,11 @@ function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const { logout } = useAuth();
 
   const openRegisterModal = () => setIsRegisterOpen(true);
 
   const openLoginModal = () => setIsLoginOpen(true);
-  const openSuccessModal = () => setIsSuccessOpen(true);
 
   const closeAllModals = () => {
     setIsRegisterOpen(false);
@@ -38,6 +39,11 @@ function App() {
     setIsLoginOpen(false);
   };
 
+  const handleLogout = () => {
+    setSearchQuery("");
+    logout();
+  };
+
   return (
     <div className="app">
       <Routes>
@@ -48,6 +54,7 @@ function App() {
               <Header
                 onSignUp={openRegisterModal}
                 onSignIn={openLoginModal}
+                onLogout={handleLogout}
                 setSearchQuery={setSearchQuery}
               />
 
@@ -86,7 +93,10 @@ function App() {
           }
         />
 
-        <Route path="/saved-articles" element={<SavedArticles />} />
+        <Route
+          path="/saved-articles"
+          element={<SavedArticles onLogout={handleLogout} />}
+        />
       </Routes>
     </div>
   );

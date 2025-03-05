@@ -2,17 +2,12 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import "./Navigator.css";
 
-function Navigator({ onSignIn }) {
-  const { user, logout } = useAuth();
+function Navigator({ onSignIn, onLogout }) {
+  const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
   const isSavedArticlesPage = location.pathname === "/saved-articles";
-
-  const handleLogout = () => {
-    logout();
-    navigate("/");
-  };
 
   return (
     <nav
@@ -65,7 +60,7 @@ function Navigator({ onSignIn }) {
                       ? "navigator__logout-icon_dark"
                       : "navigator__logout-icon_white"
                   }`}
-                  onClick={handleLogout}
+                  onClick={onLogout}
                 />
               </li>
             </>

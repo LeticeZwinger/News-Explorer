@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import NewsCard from "../NewsCard/NewsCard";
 import Navigator from "../Navigator/Navigator";
 import Footer from "../Footer/Footer";
 import "./SavedArticles.css";
 
-function SavedArticles() {
+function SavedArticles({ onLogout }) {
   const { user } = useAuth();
   const [savedArticles, setSavedArticles] = useState([]);
   const [keywords, setKeywords] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!user) {
@@ -42,6 +44,14 @@ function SavedArticles() {
     localStorage.setItem(userKey, JSON.stringify(updatedArticles));
     setSavedArticles(updatedArticles);
   };
+  const handleLogoutClick = () => {
+    if (onLogout) {
+      onLogout();
+      navigate("/");
+    } else {
+      console.error("onLogout is undefined");
+    }
+  };
 
   const formatKeywords = () => {
     if (keywords.length === 0) return "";
@@ -52,7 +62,7 @@ function SavedArticles() {
 
   return (
     <div className="saved-articles__container">
-      <Navigator />
+      <Navigator onLogout={handleLogoutClick} />
       <div className="saved-articles__content">
         <h2 className="saved-articles__title">Saved articles</h2>
         <h1 className="saved-articles__header">

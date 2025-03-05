@@ -12,7 +12,10 @@ function NewsCardList({ searchQuery = "" }) {
   const [noResults, setNoResults] = useState(false);
 
   useEffect(() => {
-    if (!searchQuery) return;
+    if (!searchQuery) {
+      setArticles([]);
+      return;
+    }
     setLoading(true);
     setError("");
     setNoResults(false);
