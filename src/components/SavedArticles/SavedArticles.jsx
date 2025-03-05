@@ -36,16 +36,11 @@ function SavedArticles() {
     const storedArticles = JSON.parse(localStorage.getItem(userKey)) || [];
 
     const updatedArticles = storedArticles.filter(
-      (article) => article._id !== articleToRemove._id,
+      (article) => article.title !== articleToRemove.title,
     );
 
     localStorage.setItem(userKey, JSON.stringify(updatedArticles));
     setSavedArticles(updatedArticles);
-
-    const remainingKeywords = [
-      ...new Set(updatedArticles.map((a) => a.keyword)),
-    ];
-    setKeywords(remainingKeywords);
   };
 
   const formatKeywords = () => {
