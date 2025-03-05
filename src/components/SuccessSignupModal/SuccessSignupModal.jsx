@@ -16,7 +16,9 @@ function SuccessModal({ isOpen, onClose, openLoginModal }) {
         className="modal__or-signin-btn"
         onClick={() => {
           onClose();
-          openLoginModal();
+          setTimeout(() => {
+            openLoginModal();
+          }, 100);
         }}
       >
         Sign in

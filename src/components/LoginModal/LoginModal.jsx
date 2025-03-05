@@ -30,7 +30,8 @@ function LoginModal({ isOpen, onClose, openRegisterModal }) {
     setLoading(true);
 
     try {
-      await authorize(email, password);
+      const response = await authorize(email, password);
+      login(response.user);
       onClose();
     } catch (err) {
       console.error("Login failed:", err);

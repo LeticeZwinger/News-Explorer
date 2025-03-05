@@ -28,8 +28,10 @@ function App() {
   };
 
   const handleRegister = async (userData) => {
-    setIsRegisterOpen(false);
-    setIsSuccessOpen(true);
+    closeAllModals();
+    setTimeout(() => {
+      setIsSuccessOpen(true);
+    }, 100);
   };
 
   const handleLogin = async (loginData) => {

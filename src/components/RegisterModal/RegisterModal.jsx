@@ -34,6 +34,9 @@ function RegisterModal({ isOpen, onClose, onRegister, openLoginModal }) {
     try {
       await register(name, email, password);
       onClose();
+      setTimeout(() => {
+        onRegister();
+      }, 100);
     } catch (err) {
       console.error("Registration failed:", err);
       setError(err.message);
