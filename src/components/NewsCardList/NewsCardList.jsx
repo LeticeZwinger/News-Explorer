@@ -42,10 +42,15 @@ function NewsCardList({ searchQuery = "" }) {
   const displayedArticles = articles.slice(0, visibleCount);
 
   return (
-    <div className="newscard-list">
+    <div
+      className={`newscard-list ${articles.length > 0 ? "has-results" : "no-results"}`}
+    >
+      {articles.length > 0 && (
+        <h2 className="newscard-list__header">Search Results</h2>
+      )}
+
       {loading && <Preloader />}
       {error && <p className="newscard-list__error">{error}</p>}
-
       {noResults && (
         <div className="newscard-list__nothing-found">
           <h3 className="newscard-list__nothing-title">Nothing Found</h3>

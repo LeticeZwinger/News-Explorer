@@ -2,10 +2,7 @@
   display: flex;
   column-gap: 80px;
   max-width: 1440px;
-  margin-left: calc(10% - 85px);
-  margin-right: calc(10% - 40px);
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding: 80px 104px;
 }
 .about__container {
   max-width: 100%;
@@ -32,12 +29,42 @@
 
 .about__title {
   font-family: "Roboto-slab-400";
-  font-family: 40px;
+  font-size: 40px;
   color: #1a1b22;
+  margin-bottom: 30px;
 }
 
 .about__paragraph {
   font-family: "Roboto";
   font-size: 18px;
   text-align: justify;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .about {
+    padding: 40px 40px 61px 40px;
+    gap: 32px;
+    min-height: 324px;
+  }
+
+  .about__container {
+    align-self: center;
+  }
+  .about__content {
+    flex-shrink: 1;
+    padding: 0;
+  }
+
+  .about__image {
+    height: 202px;
+    width: 202px;
+  }
+  .about__title {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+  .about__paragraph {
+    margin-bottom: 10px;
+  }
 }

@@ -55,3 +55,12 @@
   background-color: #2a65cc;
   transform: scale(0.99);
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .search-bar {
+    width: 452px;
+    height: 56px;
+    margin-top: 0;
+    margin-bottom: 48px;
+  }
+}

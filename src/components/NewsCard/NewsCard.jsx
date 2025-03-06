@@ -93,8 +93,8 @@ function NewsCard({
         <p className="newscard__date">{date}</p>
         <h2 className="newscard__title">{title}</h2>
         <p className="newscard__text">{text}</p>
+        <p className="newscard__source">{source}</p>
       </div>
-      <p className="newscard__source">{source}</p>
     </div>
   );
 }

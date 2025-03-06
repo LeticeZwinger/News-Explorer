@@ -10,11 +10,20 @@
   background-color: #f5f6f7;
 }
 
+.newscard-list.no-results {
+  padding: 0;
+}
+
+.newscard-list.has-results {
+  padding: 80px 104px;
+}
+
 .newscard-list__header {
   align-self: flex-start;
-  color: rgba(26, 27, 34, 0.5);
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-family: "Roboto-slab-400";
+  color: rgba(26, 27, 34, 1);
+  font-size: 40px;
+  margin-bottom: 46px;
 }
 
 .newscard-list__section {
@@ -81,4 +90,14 @@
 .newscard-list__show-more_disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .newscard-list.has-results {
+    padding: 40px;
+  }
+
+  .newscard-list__section {
+    gap: 8px;
+  }
 }
