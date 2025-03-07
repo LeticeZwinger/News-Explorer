@@ -10,10 +10,6 @@
   margin-top: auto;
 }
 
-.footer__left {
-  flex: 1;
-}
-
 .footer__info {
   font-family: "Roboto";
   margin: 0;
@@ -68,8 +64,26 @@
 /* phone */
 @media screen and (max-width: 600px) {
   .footer {
+    padding: 10px 16px 10px 19px;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    min-height: 176px;
+  }
+
+  .footer__icon {
+    margin-bottom: 26px;
+  }
+  .footer__txt-links {
     flex-direction: column;
-    text-align: center;
-    padding: 10px;
+    margin-right: auto;
+    gap: 20px;
+  }
+
+  .footer__right {
+    width: 100%;
+  }
+
+  .footer__info {
+    margin-top: 38px;
   }
 }
