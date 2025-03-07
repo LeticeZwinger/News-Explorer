@@ -93,6 +93,9 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .newscard-list {
+    padding: 40px;
+  }
   .newscard-list.has-results {
     padding: 40px;
   }

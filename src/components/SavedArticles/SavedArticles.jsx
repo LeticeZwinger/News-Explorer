@@ -61,7 +61,9 @@ function SavedArticles({ onLogout }) {
   };
 
   return (
-    <div className="saved-articles__container">
+    <div
+      className={`saved-articles__container ${savedArticles.length > 0 ? "has-results" : "no-results"}`}
+    >
       <Navigator onLogout={handleLogoutClick} />
       <div className="saved-articles__content">
         <h2 className="saved-articles__title">Saved articles</h2>
@@ -73,25 +75,25 @@ function SavedArticles({ onLogout }) {
             By keywords: <strong>{formatKeywords()}</strong>
           </p>
         )}
-
-        <section className="newscard-list">
-          <section className="newscard-list__section">
-            {savedArticles.length > 0 &&
-              savedArticles.map((article, index) => (
-                <NewsCard
-                  key={index}
-                  title={article.title}
-                  text={article.text}
-                  image={article.image}
-                  date={article.date}
-                  source={article.source}
-                  keyword={article.keyword}
-                  onRemove={() => handleRemoveArticle(article)}
-                />
-              ))}
-          </section>
-        </section>
       </div>
+      <section className="newscard-list">
+        <section className="newscard-list__section">
+          {savedArticles.length > 0 &&
+            savedArticles.map((article, index) => (
+              <NewsCard
+                key={index}
+                title={article.title}
+                text={article.text}
+                image={article.image}
+                date={article.date}
+                source={article.source}
+                keyword={article.keyword}
+                onRemove={() => handleRemoveArticle(article)}
+              />
+            ))}
+        </section>
+      </section>
+
       <Footer />
     </div>
   );

@@ -81,7 +81,7 @@
     color 0.3s;
 }
 
-.navigator__saved-articles {
+.navigator__saved-articles-btn {
   background: none;
   border: none;
   color: white;
@@ -113,20 +113,27 @@
   cursor: pointer;
   transition: opacity 0.3s;
 }
+.navigator__saved-articles_active {
+  color: #1a1b22;
+}
 
-.navigator--saved-articles .navigator__home-btn,
-.navigator--saved-articles .navigator__signin-btn,
-.navigator--saved-articles .navigator__saved-articles,
-.navigator--saved-articles .navigator__user-info {
+.navigator__saved-articles {
+  border-bottom: 1px solid rgba(209, 210, 214, 1);
+}
+
+.navigator__saved-articles .navigator__home-btn,
+.navigator__saved-articles .navigator__signin-btn,
+.navigator__saved-articles .navigator__saved-articles,
+.navigator__saved-articles .navigator__user-info {
   color: #1a1b22;
   border-color: #1a1b22;
 }
-.navigator--saved-articles .navigator__logo {
+.navigator__saved-articles .navigator__logo {
   color: #1a1b22;
   border: none;
 }
 
-.navigator--saved-articles .navigator__home-btn::after {
+.navigator__saved-articles .navigator__home-btn::after {
   background-color: #1a1b22;
 }
 
@@ -161,14 +168,26 @@
   background-color: currentColor;
   position: absolute;
   bottom: 0px;
-  right: 280px;
+  right: 285px;
 }
 /* tablet  */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .navigator {
-    padding: 0 50px;
+    padding: 0 40px;
+  }
+  .navigator__saved-articles {
+    width: 160px;
+  }
+
+  .navigator__link {
+    gap: 16px;
+  }
+
+  .navigator__saved-articles_active::after {
+    right: 228px;
   }
 }
+
 /* phone  */
 @media screen and (max-width: 600px) {
   .navigator {

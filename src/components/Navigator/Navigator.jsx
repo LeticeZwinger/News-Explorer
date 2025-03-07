@@ -12,7 +12,7 @@ function Navigator({ onSignIn, onLogout }) {
   return (
     <nav
       className={`navigator ${
-        isSavedArticlesPage ? "navigator--saved-articles" : ""
+        isSavedArticlesPage ? "navigator__saved-articles" : ""
       }`}
     >
       <div className="navigator__container">
@@ -42,7 +42,7 @@ function Navigator({ onSignIn, onLogout }) {
             <>
               <li>
                 <button
-                  className={`navigator__saved-articles ${
+                  className={`navigator__saved-articles-btn ${
                     isSavedArticlesPage
                       ? "navigator__saved-articles_active"
                       : ""

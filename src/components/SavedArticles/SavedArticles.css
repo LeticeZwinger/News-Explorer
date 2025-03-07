@@ -1,15 +1,10 @@
-.saved-articles-container {
+.saved-articles__content {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
-
-.saved-articles__content {
-  flex: 1;
+  padding: 0 104px;
 }
 
 .saved-articles__title {
-  margin-left: 104px;
   margin-top: 40px;
   color: rgba(26, 27, 34, 0.5);
   font-family: "Roboto-slab-400";
@@ -17,16 +12,17 @@
 }
 
 .saved-articles__header {
-  margin: 30px auto 28px 104px;
+  margin: 30px auto 28px 0;
+
   font-family: "Roboto-slab-400";
   color: rgba(26, 27, 34, 1);
   font-size: 40px;
-  width: 530px;
+  width: 600px;
 }
 
 .saved-articles__keywords {
   font-family: "Roboto";
-  margin-left: 104px;
+
   font-size: 18px;
   margin-bottom: 56px;
 }
@@ -36,4 +32,15 @@
   font-size: 18px;
   color: #666;
   margin-top: 50px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .saved-articles__content {
+    padding: 0 40px;
+  }
+
+  .saved-articles__header {
+    font-size: 30px;
+    width: 360px;
+  }
 }
