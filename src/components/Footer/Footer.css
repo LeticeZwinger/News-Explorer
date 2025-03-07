@@ -64,7 +64,7 @@
 /* phone */
 @media screen and (max-width: 600px) {
   .footer {
-    padding: 10px 16px 10px 19px;
+    padding: 10px 16px 22px 19px;
     justify-content: flex-start;
     flex-direction: column-reverse;
     min-height: 176px;

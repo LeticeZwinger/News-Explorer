@@ -100,7 +100,7 @@
   line-height: 22px;
   color: #333;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -190,5 +190,31 @@
     font-size: 22px;
 
     margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .newscard {
+    height: 440px;
+    width: 100%;
+    max-width: 288px;
+  }
+
+  .newscard__content {
+    padding: 16px;
+  }
+
+  .newscard__image {
+    width: 100%;
+    height: 196px;
+  }
+
+  .newscard__title {
+    margin-top: 10px;
+    margin-bottom: 14px;
+    font-size: 22px;
+  }
+
+  .newscard__date {
+    margin: 0;
   }
 }
