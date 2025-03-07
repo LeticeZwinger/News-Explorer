@@ -37,6 +37,7 @@
 .about__paragraph {
   font-family: "Roboto";
   font-size: 18px;
+  line-height: 24px;
   text-align: justify;
   margin-bottom: 20px;
 }
@@ -66,5 +67,18 @@
   }
   .about__paragraph {
     margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 536px) {
+  .about {
+    padding: 32px 16px 0 19px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about__title {
+    font-size: 30px;
+    margin-bottom: 16px;
   }
 }
