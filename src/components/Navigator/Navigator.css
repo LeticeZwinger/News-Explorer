@@ -133,7 +133,8 @@
 .navigator__saved-articles .navigator__saved-articles,
 .navigator__saved-articles .navigator__user-info,
 .navigator__saved-articles .navigator__logout-icon,
-.navigator__saved-articles .navigator__saved-articles-btn {
+.navigator__saved-articles .navigator__saved-articles-btn,
+.navigator__saved-articles .navigator__saved-articles-btn_active {
   color: #1a1b22;
   border-color: #1a1b22;
 }
@@ -142,17 +143,21 @@
   border: none;
 }
 
+.navigator__menu-btn {
+  list-style: none;
+  background: transparent;
+}
 .navigator__saved-articles .navigator__home-btn::after {
-  background-color: #1a1b22;
+  color: #1a1b22;
 }
 
 .navigator__logout-icon_white {
-  background: url(../../assets/logout-white.svg) !important;
+  background: url(../../assets/logout-white.svg) transparent no-repeat center;
   background-size: contain;
 }
 
 .navigator__logout-icon_dark {
-  background: url(../../assets/logout-dark.svg) !important;
+  background: url(../../assets/logout-dark.svg) transparent no-repeat center;
   background-size: contain;
 }
 
@@ -171,7 +176,7 @@
   left: -10px;
 }
 /* line for saved articles */
-.navigator__saved-articles_active::after {
+.navigator__saved-articles-btn_active::after {
   content: "";
   display: block;
   width: 143px;
@@ -251,6 +256,7 @@
     background-size: contain;
     border: none;
     cursor: pointer;
+
     /* z-index: 11; */
   }
 
@@ -288,7 +294,9 @@
   .navigator__home-btn_active::after {
     display: none !important;
   }
-
+  .navigator__saved-articles-btn_active::after {
+    display: none !important;
+  }
   .navigator__link {
     width: 100%;
     flex-direction: column;
