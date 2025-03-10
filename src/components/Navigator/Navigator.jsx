@@ -98,9 +98,13 @@ function Navigator({ onSignIn, onLogout }) {
                   </button>
                 </li>
                 <li className="navigator__user-info">
-                  {user.name}
+                  <span className="navigator__user-name">{user.name}</span>
                   <span
-                    className={`navigator__logout-icon ${!isSavedArticlesPage ? "navigator__logout-icon_white" : "navigator__logout-icon_dark"}`}
+                    className={`navigator__logout-icon ${
+                      !isSavedArticlesPage
+                        ? "navigator__logout-icon_white"
+                        : "navigator__logout-icon_dark"
+                    }`}
                     onClick={() => {
                       onLogout();
                       closeMenu();

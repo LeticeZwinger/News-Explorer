@@ -42,7 +42,7 @@
   list-style-type: none;
   display: flex;
   align-items: center;
-  column-gap: 35px;
+  gap: 40px;
 }
 
 .navigator__items {
@@ -91,10 +91,6 @@
 }
 
 .navigator__user-info {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   padding: 10px 40px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -102,12 +98,17 @@
   line-height: 24px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 18px;
   color: white;
   border: 1px solid white;
   border-radius: 50px;
 }
-
+.navigator__user-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50px; /* Adjust to your needs */
+}
 .navigator__logout-icon {
   width: 20px;
   height: 20px;
@@ -186,7 +187,7 @@
   background-color: currentColor;
   position: absolute;
   bottom: 0px;
-  right: 285px;
+  right: 300px;
 }
 
 .navigator__overlay {

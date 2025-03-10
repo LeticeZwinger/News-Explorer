@@ -50,7 +50,7 @@ function App() {
         <Route
           path="/"
           element={
-            <>
+            <div>
               <Header
                 onSignUp={openRegisterModal}
                 onSignIn={openLoginModal}
@@ -88,8 +88,9 @@ function App() {
               />
               <NewsCardList searchQuery={searchQuery} />
               <About />
+
               <Footer />
-            </>
+            </div>
           }
         />
 
