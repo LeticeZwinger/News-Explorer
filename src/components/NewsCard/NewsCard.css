@@ -131,8 +131,8 @@
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 8px;
+  right: 8px;
   z-index: 2;
   transition: opacity 0.3s;
 }
@@ -160,6 +160,17 @@
   z-index: 3;
   opacity: 0;
   transition: opacity 0.3s;
+}
+
+.newscard__keyword {
+  font-size: 14px;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 9px 16px;
+  border-radius: 10px;
+  top: 8px;
+  left: 8px;
 }
 
 .newscard__trash-btn:hover .newscard__trash-tooltip {

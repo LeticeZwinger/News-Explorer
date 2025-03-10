@@ -9,7 +9,7 @@ function NewsCard({
   image,
   date,
   source,
-
+  keyword,
   searchQuery,
   onRemove,
 }) {
@@ -66,13 +66,16 @@ function NewsCard({
         <img src={image} alt={title} className="newscard__image" />
 
         {isSavedArticlesPage ? (
-          <button
-            className="newscard__trash-btn"
-            title="Remove article"
-            onClick={onRemove}
-          >
-            <span className="newscard__trash-tooltip">Remove from saved</span>
-          </button>
+          <div>
+            <span className="newscard__keyword">{keyword}</span>
+            <button
+              className="newscard__trash-btn"
+              title="Remove article"
+              onClick={onRemove}
+            >
+              <span className="newscard__trash-tooltip">Remove from saved</span>
+            </button>
+          </div>
         ) : (
           <button
             className={`newscard__bookmark-btn ${
