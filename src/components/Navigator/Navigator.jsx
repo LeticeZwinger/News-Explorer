@@ -26,7 +26,7 @@ function Navigator({ onSignIn, onLogout }) {
       )}
 
       <nav
-        className={`navigator ${menuOpen ? "navigator--open" : ""} ${isSavedArticlesPage ? "navigator__saved-articles" : ""}`}
+        className={`navigator ${menuOpen ? "navigator__open" : ""} ${isSavedArticlesPage ? "navigator__saved-articles" : ""}`}
       >
         <div className="navigator__container">
           <h2 className="navigator__logo">NewsExplorer</h2>

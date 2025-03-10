@@ -8,7 +8,7 @@
   border-bottom: 1px solid rgba(196, 196, 196, 0.3);
   box-sizing: border-box;
   position: relative;
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 .navigator__container {
@@ -110,8 +110,15 @@
   width: 20px;
   height: 20px;
   background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   cursor: pointer;
   transition: opacity 0.3s;
+  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  background: transparent;
 }
 .navigator__saved-articles_active {
   color: #1a1b22;
@@ -124,7 +131,9 @@
 .navigator__saved-articles .navigator__home-btn,
 .navigator__saved-articles .navigator__signin-btn,
 .navigator__saved-articles .navigator__saved-articles,
-.navigator__saved-articles .navigator__user-info {
+.navigator__saved-articles .navigator__user-info,
+.navigator__saved-articles .navigator__logout-icon,
+.navigator__saved-articles .navigator__saved-articles-btn {
   color: #1a1b22;
   border-color: #1a1b22;
 }
@@ -138,17 +147,19 @@
 }
 
 .navigator__logout-icon_white {
-  background: url(../../assets/logout-white.svg) center no-repeat;
+  background: url(../../assets/logout-white.svg) !important;
+  background-size: contain;
 }
 
 .navigator__logout-icon_dark {
-  background: url(../../assets/logout-dark.svg) center no-repeat;
+  background: url(../../assets/logout-dark.svg) !important;
+  background-size: contain;
 }
 
 .navigator__logout-icon:hover {
   opacity: 0.7;
 }
-
+/* line for home */
 .navigator__home-btn_active::after {
   content: "";
   display: block;
@@ -159,7 +170,7 @@
   bottom: -18px;
   left: -10px;
 }
-
+/* line for saved articles */
 .navigator__saved-articles_active::after {
   content: "";
   display: block;
@@ -182,11 +193,11 @@
   z-index: 9;
   transition: opacity 0.3s ease-in-out;
 }
-.navigator--open {
-  background: black;
+.navigator__open {
+  background: rgba(26, 27, 34, 1);
 }
 
-.navigator--open + .navigator__overlay {
+.navigator__open + .navigator__overlay {
   display: block;
 }
 /* tablet  */
@@ -225,6 +236,7 @@
   .navigator {
     padding: 0 16px;
     position: relative;
+    height: 56px;
   }
 
   .navigator__logo {
@@ -239,7 +251,7 @@
     background-size: contain;
     border: none;
     cursor: pointer;
-    z-index: 11;
+    /* z-index: 11; */
   }
 
   .navigator__menu-btn.navigator__close-btn {
@@ -256,12 +268,12 @@
     right: 0;
     width: 100%;
 
-    background: black;
+    background: rgba(26, 27, 34, 1);
     flex-direction: column;
     gap: 15px;
     padding: 16px 16px 16px 19px;
     text-align: center;
-    z-index: 10;
+    /* z-index: 10; */
     transition: 0.3s ease-in-out;
   }
 
@@ -282,5 +294,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 22px;
+  }
+
+  .navigator__saved-articles .navigator__menu-btn {
+    background: url(../../assets/menu-dark.svg) center no-repeat;
+    background-size: contain;
   }
 }
