@@ -87,3 +87,21 @@
   margin-top: 5px;
   text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+  .modal {
+    align-items: flex-end;
+  }
+
+  .modal__container {
+    max-width: none;
+    height: auto;
+  }
+
+  .modal__close-button {
+    right: 16px;
+    top: -40px;
+    height: 24px;
+    width: 24px;
+  }
+}

@@ -96,3 +96,22 @@
   font-weight: bold;
   transition: color 0.3s;
 }
+
+@media screen and (max-width: 600px) {
+  .modal__container_form {
+    border-radius: 16px 16px 0 0;
+    padding: 16px;
+    height: 480px;
+  }
+  .modal__title {
+    font-size: 24px;
+  }
+  .modal__label {
+    margin-top: 18px;
+  }
+  .modal__input {
+    padding: 6px 0 8px 0;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}

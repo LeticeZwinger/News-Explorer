@@ -170,6 +170,25 @@
   bottom: 0px;
   right: 285px;
 }
+
+.navigator__overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9;
+  transition: opacity 0.3s ease-in-out;
+}
+.navigator--open {
+  background: black;
+}
+
+.navigator--open + .navigator__overlay {
+  display: block;
+}
 /* tablet  */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .navigator {
@@ -188,14 +207,46 @@
   }
 }
 
+@media screen and (min-width: 601px) {
+  .navigator__home-btn_active::after {
+    content: "";
+    display: block;
+    width: 68px;
+    height: 3px;
+    background-color: currentColor;
+    position: absolute;
+    bottom: -18px;
+    left: -10px;
+  }
+}
+
 /* phone  */
 @media screen and (max-width: 600px) {
   .navigator {
-    padding: 0 16px 0 19px;
+    padding: 0 16px;
+    position: relative;
   }
 
   .navigator__logo {
     font-size: 16px;
+  }
+
+  .navigator__menu-btn {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(../../assets/menu.svg) center no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    z-index: 11;
+  }
+
+  .navigator__menu-btn.navigator__close-btn {
+    background: url(../../assets/close.svg) center no-repeat;
+    background-size: contain;
+    height: 24px;
+    width: 24px;
   }
 
   .navigator__right-side {
@@ -204,25 +255,32 @@
     top: 80px;
     right: 0;
     width: 100%;
-    background: rgb(0, 0, 0);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    background: black;
     flex-direction: column;
     gap: 15px;
-    padding: 20px;
+    padding: 16px 16px 16px 19px;
     text-align: center;
+    z-index: 10;
+    transition: 0.3s ease-in-out;
   }
 
   .navigator__right-side.open {
     display: flex;
   }
 
-  .navigator__dropdown {
-    display: block;
-    width: 40px;
-    height: 40px;
-    background: url(../../assets/menu.svg) center no-repeat;
-    background-size: contain;
-    border: none;
-    cursor: pointer;
+  .navigator__signin-btn {
+    padding: 10px 117px;
+  }
+
+  .navigator__home-btn_active::after {
+    display: none !important;
+  }
+
+  .navigator__link {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
   }
 }

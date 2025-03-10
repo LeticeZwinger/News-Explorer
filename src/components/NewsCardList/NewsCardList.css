@@ -109,11 +109,16 @@
   .newscard-list.newscard-list.has-results {
     padding: 32px 16px 24px 19px;
   }
+  .newscard-list {
+    padding: 0;
+  }
   .newscard-list__section {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   .newscard-list__header {
