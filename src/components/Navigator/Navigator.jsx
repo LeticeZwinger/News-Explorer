@@ -39,29 +39,48 @@ function Navigator({ onSignIn, onLogout }) {
     setMenuOpen(false);
   };
 
+  function getRightColor() {
+    if (menuOpen) {
+      return "white";
+    }
+    if (isSavedArticlesPage) {
+      return "#1a1b22";
+    } else {
+      ("white");
+    }
+  }
+
   return (
     <>
       {menuOpen && (
-        <div className="navigator__overlay" onClick={closeMenu}></div>
+        <div className="navigator__overlay" onClick={() => {}}></div>
       )}
 
       <nav
         className={`navigator ${menuOpen ? "navigator__open" : ""} ${isSavedArticlesPage ? "navigator__saved-articles" : ""}`}
       >
         <div className="navigator__container">
-          <h2 className="navigator__logo">NewsExplorer</h2>
+          <h2
+            style={{ color: `${getRightColor()}` }}
+            className="navigator__logo"
+          >
+            NewsExplorer
+          </h2>
         </div>
         {width < 600 && (
           <button
-            className={`navigator__menu-btn ${menuOpen ? "navigator__close-btn" : ""}`}
+            className={`${menuOpen ? "navigator__close-btn" : "navigator__menu-btn"}`}
             onClick={toggleMenu}
             aria-label="Toggle menu"
           ></button>
         )}
-        <div className={`navigator__right-side ${menuOpen ? "open" : ""}`}>
+        <div
+          className={`navigator__right-side ${menuOpen ? "navigator__right-side_open" : ""}`}
+        >
           <ul className="navigator__link">
             <li className="navigator__items">
               <button
+                style={{ color: `${getRightColor()}` }}
                 className={`navigator__home-btn ${!isSavedArticlesPage ? "navigator__home-btn_active" : ""}`}
                 onClick={() => {
                   navigate("/");
@@ -88,6 +107,7 @@ function Navigator({ onSignIn, onLogout }) {
               <>
                 <li>
                   <button
+                    style={{ color: `${getRightColor()}` }}
                     className={`navigator__saved-articles-btn ${isSavedArticlesPage ? "navigator__saved-articles-btn_active" : ""}`}
                     onClick={() => {
                       navigate("/saved-articles");
@@ -98,7 +118,12 @@ function Navigator({ onSignIn, onLogout }) {
                   </button>
                 </li>
                 <li className="navigator__user-info">
-                  <span className="navigator__user-name">{user.name}</span>
+                  <span
+                    style={{ color: `${getRightColor()}` }}
+                    className="navigator__user-name"
+                  >
+                    {user.name}
+                  </span>
                   <span
                     className={`navigator__logout-icon ${
                       !isSavedArticlesPage
