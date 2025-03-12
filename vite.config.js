@@ -4,5 +4,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/News-Explorer/", // Replace "my-app" with your repository name
+  base: "/src/",
 });
