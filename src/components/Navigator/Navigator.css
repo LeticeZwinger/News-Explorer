@@ -33,7 +33,7 @@
   align-items: center;
   gap: 42px;
   flex: 1;
-  padding: 0;
+  padding-left: 40px;
   margin-right: auto;
   z-index: 20;
 }
@@ -155,7 +155,7 @@
 .navigator__logout-icon:hover {
   opacity: 0.7;
 }
-/* line for home */
+
 .navigator__home-btn_active::after {
   content: "";
   display: block;
@@ -166,7 +166,7 @@
   bottom: -18px;
   left: -10px;
 }
-/* line for saved articles */
+
 .navigator__saved-articles-btn_active::after {
   content: "";
   display: block;
@@ -196,26 +196,29 @@
 .navigator__open + .navigator__overlay {
   display: block;
 }
-/* tablet  */
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .navigator {
     padding: 0 40px;
   }
   .navigator__saved-articles {
-    width: 160px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 
   .navigator__link {
     gap: 16px;
   }
 
-  .navigator__saved-articles_active::after {
-    right: 228px;
+  .navigator__saved-articles-btn_active::after {
+    right: 225px;
+    height: 5px;
+    width: 70px;
   }
 }
 
-/* phone  */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .navigator {
     padding: 0 16px;
     position: relative;

@@ -67,7 +67,7 @@
   }
 }
 /* phone  */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .header__container {
     padding: 0 16px 0 19px;
   }

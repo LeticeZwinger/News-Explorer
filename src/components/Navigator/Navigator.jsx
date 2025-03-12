@@ -67,7 +67,7 @@ function Navigator({ onSignIn, onLogout }) {
             NewsExplorer
           </h2>
         </div>
-        {width < 600 && (
+        {width < 640 && (
           <button
             className={`${menuOpen ? "navigator__close-btn" : "navigator__menu-btn"}`}
             onClick={toggleMenu}

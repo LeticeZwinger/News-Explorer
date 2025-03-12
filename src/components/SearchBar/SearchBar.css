@@ -64,7 +64,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .search-bar {
     height: auto;
     max-width: 288px;

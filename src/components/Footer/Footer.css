@@ -62,7 +62,7 @@
 }
 
 /* phone */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .footer {
     padding: 10px 16px 22px 19px;
     justify-content: flex-start;

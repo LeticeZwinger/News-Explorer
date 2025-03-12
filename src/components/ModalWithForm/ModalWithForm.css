@@ -97,7 +97,7 @@
   transition: color 0.3s;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .modal__container_form {
     border-radius: 16px 16px 0 0;
     padding: 16px;
