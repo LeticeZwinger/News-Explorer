@@ -17,7 +17,7 @@ function ModalWithForm({
       name="form"
       isOpen={isOpen}
       onClose={onClose}
-      containerClassName={`modal__container_form ${containerClassName}`}
+      containerClassName={`modal__container_type_form ${containerClassName}`}
     >
       <h2 className="modal__title">{title}</h2>
       <form className="modal__form" onSubmit={onSubmit}>

@@ -75,8 +75,7 @@ function Navigator({ onSignIn, onLogout }) {
           ></button>
         )}
         <div
-          //fix class name
-          className={`navigator__right-side ${menuOpen ? "navigator__right-side_open" : ""}`}
+          className={`.navigator__nav-items ${menuOpen ? ".navigator__nav-items_open" : ""}`}
         >
           <ul className="navigator__link">
             <li className="navigator__items">

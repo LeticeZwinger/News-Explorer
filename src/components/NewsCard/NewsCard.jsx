@@ -61,7 +61,7 @@ function NewsCard({
   };
 
   return (
-    <div className="newscard">
+    <article className="newscard">
       <div className="newscard__image-container">
         <img src={image} alt={title} className="newscard__image" />
 
@@ -98,7 +98,7 @@ function NewsCard({
         <p className="newscard__text">{text}</p>
         <p className="newscard__source">{source}</p>
       </div>
-    </div>
+    </article>
   );
 }
 

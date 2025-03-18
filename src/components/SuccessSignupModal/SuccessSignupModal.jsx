@@ -7,7 +7,7 @@ function SuccessModal({ isOpen, onClose, openLoginModal }) {
       name="success"
       isOpen={isOpen}
       onClose={onClose}
-      containerClassName="modal__container_success"
+      containerClassName="modal__container_type_success"
     >
       <p className="modal__success-message">
         Registration successfully completed!

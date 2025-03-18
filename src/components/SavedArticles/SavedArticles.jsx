@@ -61,7 +61,6 @@ function SavedArticles({ onLogout }) {
   };
 
   return (
-    //fix
     <div
       className={`saved-articles ${savedArticles.length > 0 ? "has-results" : "no-results"}`}
     >

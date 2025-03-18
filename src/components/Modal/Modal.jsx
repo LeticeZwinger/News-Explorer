@@ -32,7 +32,7 @@ export const Modal = ({
 
   return (
     <div
-      className={`modal modal__type_${name} ${isOpen ? "modal_open" : ""}`}
+      className={`modal modal_type_${name} ${isOpen ? "modal_open" : ""}`}
       onClick={handleOverlayClick}
     >
       <div className={`modal__container ${containerClassName}`}>

@@ -60,23 +60,24 @@ function NewsCardList({ searchQuery = "" }) {
         </div>
       )}
 
-      <section className="newscard-list__section">
+      <ul className="newscard-list__section">
         {displayedArticles.map((article, index) => (
-          <NewsCard
-            key={index}
-            title={article.title}
-            text={article.description}
-            image={article.urlToImage}
-            date={new Date(article.publishedAt).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-            source={article.source.name}
-            searchQuery={searchQuery}
-          />
+          <li key={index} className="newscard-list__item">
+            <NewsCard
+              title={article.title}
+              text={article.description}
+              image={article.urlToImage}
+              date={new Date(article.publishedAt).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+              source={article.source.name}
+              searchQuery={searchQuery}
+            />
+          </li>
         ))}
-      </section>
+      </ul>
 
       {articles.length > visibleCount && (
         <button

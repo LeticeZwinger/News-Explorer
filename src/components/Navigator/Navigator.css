@@ -27,7 +27,7 @@
   color: #ffffff;
 }
 
-.navigator__right-side {
+.navigator__nav-items {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -79,6 +79,11 @@
   transition:
     0.3s,
     color 0.3s;
+}
+.navigator__signin-btn:hover,
+.navigator__signin-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6);
 }
 
 .navigator__saved-articles-btn {
@@ -247,7 +252,7 @@
     width: 24px;
   }
 
-  .navigator__right-side {
+  .navigator__nav-items {
     display: none;
     position: absolute;
     top: 80px;
@@ -262,7 +267,7 @@
     transition: 0.3s ease-in-out;
   }
 
-  .navigator__right-side_open {
+  .navigator__nav-items_open {
     display: flex;
     position: absolute;
     top: 56px;

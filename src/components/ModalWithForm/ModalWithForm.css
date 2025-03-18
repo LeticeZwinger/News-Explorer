@@ -1,4 +1,4 @@
-.modal__container_form {
+.modal__container_type_form {
   background-color: #fff;
   padding: 34px 36px;
   border-radius: 16px;
@@ -98,7 +98,7 @@
 }
 
 @media screen and (max-width: 640px) {
-  .modal__container_form {
+  .modal__container_type_form {
     border-radius: 16px 16px 0 0;
     padding: 16px;
     height: 480px;
