@@ -75,7 +75,7 @@
 }
 
 .newscard__date {
-  font-family: sans-serif;
+  font-family: sans-serif, "Segoe UI", Tahoma, Verdana;
   color: #b6bcbf;
   font-size: 18px;
   align-self: flex-start;
@@ -83,7 +83,7 @@
 }
 
 .newscard__title {
-  font-family: "Roboto-slab-400";
+  font-family: "Roboto-slab-400", system-ui, "Segoe UI", "Open Sans", sans-serif;
   font-size: 26px;
   margin-top: 0;
   margin-bottom: 16px;
@@ -95,7 +95,7 @@
 }
 
 .newscard__text {
-  font-family: "Roboto";
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 22px;
   color: #333;
@@ -108,7 +108,7 @@
 }
 
 .newscard__source {
-  font-family: "Roboto-slab-700";
+  font-family: "Roboto-slab-700", system-ui, "Segoe UI", "Open Sans", sans-serif;
   align-self: flex-start;
   margin-top: auto;
   font-size: 16px;

@@ -5,7 +5,7 @@
 
 .modal__success-message {
   color: #000000;
-  font-family: "Roboto-900";
+  font-family: "Roboto-900", system-ui, "Segoe UI", "Open Sans", sans-serif;
   font-size: 24px;
   margin-top: 20px;
   margin-bottom: 14px;

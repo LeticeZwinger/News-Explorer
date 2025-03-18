@@ -55,9 +55,9 @@ function Navigator({ onSignIn, onLogout }) {
       {menuOpen && (
         <div className="navigator__overlay" onClick={() => {}}></div>
       )}
-
+      {/* change the name class / use as a modifier navigator_page_saved-articles */}
       <nav
-        className={`navigator ${menuOpen ? "navigator__open" : ""} ${isSavedArticlesPage ? "navigator__saved-articles" : ""}`}
+        className={`navigator ${menuOpen ? "navigator_open" : ""} ${isSavedArticlesPage ? " navigator_page_saved-articles " : ""}`}
       >
         <div className="navigator__container">
           <h2
@@ -75,6 +75,7 @@ function Navigator({ onSignIn, onLogout }) {
           ></button>
         )}
         <div
+          //fix class name
           className={`navigator__right-side ${menuOpen ? "navigator__right-side_open" : ""}`}
         >
           <ul className="navigator__link">

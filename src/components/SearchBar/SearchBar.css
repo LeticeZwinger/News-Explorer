@@ -1,5 +1,5 @@
 .search-bar {
-  font-family: "Roboto";
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +34,7 @@
 }
 
 .search-bar__btn {
-  font-family: "Roboto";
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
   background-color: #2f71e5;
   color: white;
   border: none;

@@ -20,7 +20,7 @@
 .navigator__logo {
   margin: 0;
   border-bottom: 3px solid transparent;
-  font-family: "Roboto-slab-700";
+  font-family: "Roboto-slab-700", system-ui, "Segoe UI", "Open Sans", sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
@@ -57,7 +57,7 @@
   padding: 10px 0;
   cursor: pointer;
   position: relative;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -71,7 +71,7 @@
   border-radius: 50px;
   background: transparent;
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
@@ -92,7 +92,7 @@
 
 .navigator__user-info {
   padding: 10px 40px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
@@ -124,15 +124,15 @@
   background: transparent;
 }
 
-.navigator__saved-articles {
+.navigator_page_saved-articles {
   border-bottom: 1px solid rgba(209, 210, 214, 1);
 }
 
-.navigator__saved-articles .navigator__user-info {
+.navigator_page_saved-articles .navigator__user-info {
   color: #1a1b22;
   border-color: #1a1b22;
 }
-.navigator__saved-articles .navigator__logo {
+.navigator_page_saved-articles.navigator__logo {
   color: #1a1b22;
   border: none;
 }
@@ -187,13 +187,13 @@
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 9;
 }
-.navigator__open {
+.navigator_open {
   background: rgba(26, 27, 34, 1);
   z-index: 20;
   position: absolute;
 }
 
-.navigator__open + .navigator__overlay {
+.navigator_open + .navigator__overlay {
   display: block;
 }
 
@@ -201,7 +201,7 @@
   .navigator {
     padding: 0 40px;
   }
-  .navigator__saved-articles {
+  .navigator_page_saved-articles {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -273,15 +273,15 @@
     padding: 10px 117px;
   }
 
-  .navigator__saved-articles .navigator__user-info {
+  .navigator_page_saved-articles .navigator__user-info {
     color: white;
     border-color: white;
   }
 
-  .navigator__saved-articles .navigator__menu-btn {
+  .navigator_page_saved-articles .navigator__menu-btn {
     background: url(../../assets/menu-dark.svg) center no-repeat;
   }
-  .navigator__saved-articles .navigator__logout-icon {
+  .navigator_page_saved-articles .navigator__logout-icon {
     background: url(../../assets/logout-white.svg) center no-repeat;
   }
 

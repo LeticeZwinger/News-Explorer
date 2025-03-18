@@ -7,21 +7,21 @@
 .saved-articles__title {
   margin-top: 40px;
   color: rgba(26, 27, 34, 0.5);
-  font-family: "Roboto-slab-400";
+  font-family: "Roboto-slab-400", system-ui, "Segoe UI", "Open Sans", sans-serif;
   font-size: 18px;
 }
 
 .saved-articles__header {
   margin: 30px auto 28px 0;
 
-  font-family: "Roboto-slab-400";
+  font-family: "Roboto-slab-400", system-ui, "Segoe UI", "Open Sans", sans-serif;
   color: rgba(26, 27, 34, 1);
   font-size: 40px;
   width: 600px;
 }
 
 .saved-articles__keywords {
-  font-family: "Roboto";
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
 
   font-size: 18px;
   margin-bottom: 56px;

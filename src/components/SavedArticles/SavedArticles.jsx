@@ -61,8 +61,9 @@ function SavedArticles({ onLogout }) {
   };
 
   return (
+    //fix
     <div
-      className={`saved-articles__container ${savedArticles.length > 0 ? "has-results" : "no-results"}`}
+      className={`saved-articles ${savedArticles.length > 0 ? "has-results" : "no-results"}`}
     >
       <Navigator onLogout={handleLogoutClick} />
       <div className="saved-articles__content">
@@ -76,6 +77,7 @@ function SavedArticles({ onLogout }) {
           </p>
         )}
       </div>
+
       <section className="newscard-list">
         <section className="newscard-list__section">
           {savedArticles.length > 0 &&

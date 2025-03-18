@@ -1,5 +1,5 @@
 .header {
-  font-family: "Roboto-slab-400";
+  font-family: "Roboto-slab-400", system-ui, "Segoe UI", "Open Sans", sans-serif;
   background-image: url(../../assets/background.png);
   background-size: cover;
   background-position: center;
@@ -38,7 +38,7 @@
 }
 
 .header__subtitle {
-  font-family: "Roboto";
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
   font-weight: 400;
   align-self: flex-start;
   font-size: 18px;

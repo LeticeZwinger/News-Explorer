@@ -10,7 +10,7 @@
 }
 
 .modal__title {
-  font-family: "Roboto-900";
+  font-family: "Roboto-900", system-ui, "Segoe UI", "Open Sans", sans-serif;
   font-size: 28px;
   font-weight: bold;
   margin: 0 auto 22px;
@@ -37,7 +37,7 @@
 }
 
 .modal__label {
-  font-family: "inter-400";
+  font-family: "inter-400", sans-serif;
   display: block;
   text-align: left;
   font-weight: 500;
@@ -47,7 +47,7 @@
 }
 
 .modal__submit {
-  font-family: "Roboto-500";
+  font-family: "Roboto-500", system-ui, "Segoe UI", "Open Sans", sans-serif;
   background-color: rgba(47, 113, 229, 1);
   color: white;
   border: none;
@@ -81,13 +81,13 @@
 }
 
 .modal__redirect {
-  font-family: "inter-400";
+  font-family: "inter-400", sans-serif;
   color: black;
 }
 
 .modal__or-signup-btn,
 .modal__or-signin-btn {
-  font-family: "inter-400";
+  font-family: "inter-400", sans-serif;
   font-size: 14px;
   background: none;
   border: none;

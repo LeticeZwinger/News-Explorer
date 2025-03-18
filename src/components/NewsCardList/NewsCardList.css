@@ -20,7 +20,7 @@
 
 .newscard-list__header {
   align-self: flex-start;
-  font-family: "Roboto-slab-400";
+  font-family: "Roboto-slab-400", system-ui, "Segoe UI", "Open Sans", sans-serif;
   color: rgba(26, 27, 34, 1);
   font-size: 40px;
   margin-bottom: 46px;
@@ -55,14 +55,14 @@
 }
 
 .newscard-list__nothing-title {
-  font-family: "Roboto-slab-400";
+  font-family: "Roboto-slab-400", system-ui, "Segoe UI", "Open Sans", sans-serif;
   font-size: 26px;
   color: rgba(26, 27, 34, 1);
   margin-bottom: 16px;
 }
 
 .newscard-list__nothing-text {
-  font-family: "Roboto";
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
   font-size: 18px;
   color: rgba(182, 188, 191, 1);
   height: 48px;
