@@ -24,6 +24,7 @@ function NewsCardList({ searchQuery = "" }) {
       .then((fetchedArticles) => {
         if (fetchedArticles.length === 0) {
           setNoResults(true);
+          setArticles([]);
         } else {
           setArticles(fetchedArticles);
         }
@@ -43,7 +44,7 @@ function NewsCardList({ searchQuery = "" }) {
 
   return (
     <div className="newscard-list">
-      {articles.length > 0 && (
+      {(articles.length > 0 || noResults) && (
         <div className="newscard-list__container">
           <h2 className="newscard-list__header">Search Results</h2>
 

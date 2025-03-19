@@ -1,3 +1,5 @@
+Available at https://leticezwinger.github.io/News-Explorer/ 😃
+
 News Explorer
 
 News Explorer is a responsive React application that allows users to search for news articles, view results in a clean grid layout, and save their favorite articles. Users can sign up and sign in to save articles, and the app adapts its layout for desktop, tablet, and mobile devices.

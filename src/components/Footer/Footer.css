@@ -34,7 +34,8 @@
   font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
   display: flex;
   gap: 40px;
-  margin-right: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .footer__link:hover {
@@ -51,14 +52,13 @@
   opacity: 0.7;
 }
 
-/* tablet */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .footer {
     padding: 0 40px;
+    width: 100%;
   }
 }
 
-/* phone */
 @media screen and (max-width: 640px) {
   .footer {
     padding: 10px 16px 22px 19px;
