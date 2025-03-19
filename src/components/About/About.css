@@ -44,7 +44,7 @@
   margin-bottom: 20px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .about {
     padding: 40px 40px 61px 40px;
     gap: 32px;

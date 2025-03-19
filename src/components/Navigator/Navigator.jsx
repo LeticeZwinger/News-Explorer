@@ -92,7 +92,7 @@ function Navigator({ onSignIn, onLogout }) {
               </li>
 
               {!user ? (
-                <li>
+                <li className="navigator__items">
                   <button
                     className="navigator__signin-btn"
                     onClick={() => {
@@ -105,7 +105,7 @@ function Navigator({ onSignIn, onLogout }) {
                 </li>
               ) : (
                 <>
-                  <li>
+                  <li className="navigator__items">
                     <button
                       style={{ color: `${getRightColor()}` }}
                       className={`navigator__saved-articles-btn ${isSavedArticlesPage ? "navigator__saved-articles-btn_active" : ""}`}

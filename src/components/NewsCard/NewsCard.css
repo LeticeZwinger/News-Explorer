@@ -182,7 +182,7 @@
   display: block;
 }
 
-@media screen and (min-width: 641px) and (max-width: 1440px) {
+@media screen and (max-width: 1400px) {
   .newscard {
     width: 224px;
     height: 420px;

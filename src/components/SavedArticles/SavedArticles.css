@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 0 104px;
   max-width: 1440px;
-  min-width: 1440px;
+
   margin-left: auto;
   margin-right: auto;
 }
@@ -21,7 +21,7 @@
   font-family: "Roboto-slab-400", system-ui, "Segoe UI", "Open Sans", sans-serif;
   color: rgba(26, 27, 34, 1);
   font-size: 40px;
-  width: 600px;
+  width: 100%;
 }
 
 .saved-articles__keywords {
@@ -41,6 +41,7 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .saved-articles__content {
     padding: 0 40px;
+    width: 100%;
   }
 
   .saved-articles__header {

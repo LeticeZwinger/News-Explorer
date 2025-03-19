@@ -8,7 +8,7 @@
 }
 
 .newscard-list__container {
-  padding: 80px 104px;
+  padding: 80px;
   display: flex;
   justify-content: center;
   flex-direction: column;

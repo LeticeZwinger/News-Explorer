@@ -67,6 +67,7 @@
 }
 
 .navigator__signin-btn {
+  width: 152px;
   display: inline-block;
   padding: 10px 50px;
   border: 1px solid white;
@@ -204,9 +205,13 @@
   display: block;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .navigator {
     padding: 0 40px;
+  }
+
+  .navigator__container {
+    padding: 0;
   }
   .navigator_page_saved-articles {
     width: 100%;
@@ -215,7 +220,7 @@
   }
 
   .navigator__link {
-    gap: 16px;
+    gap: 25px;
   }
 
   .navigator__saved-articles-btn_active::after {
@@ -233,7 +238,7 @@
   }
 
   .navigator__container {
-    max-width: 400px;
+    max-width: 100%;
     padding: 0;
     margin: 0;
   }
@@ -298,6 +303,9 @@
     background: url(../../assets/logout-white.svg) center no-repeat;
   }
 
+  .navigator__home-btn_active {
+    margin: 0;
+  }
   .navigator__home-btn_active::after {
     display: none;
   }
