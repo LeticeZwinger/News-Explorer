@@ -78,21 +78,24 @@ function SavedArticles({ onLogout }) {
       </div>
 
       <section className="newscard-list">
-        <section className="newscard-list__section">
-          {savedArticles.length > 0 &&
-            savedArticles.map((article, index) => (
-              <NewsCard
-                key={index}
-                title={article.title}
-                text={article.text}
-                image={article.image}
-                date={article.date}
-                source={article.source}
-                keyword={article.keyword}
-                onRemove={() => handleRemoveArticle(article)}
-              />
-            ))}
-        </section>
+        <div className="newscard-list__container">
+          <ul className="newscard-list__section">
+            {savedArticles.length > 0 &&
+              savedArticles.map((article, index) => (
+                <li key={index} className="newscard-list__item">
+                  <NewsCard
+                    title={article.title}
+                    text={article.text}
+                    image={article.image}
+                    date={article.date}
+                    source={article.source}
+                    keyword={article.keyword}
+                    onRemove={() => handleRemoveArticle(article)}
+                  />
+                </li>
+              ))}
+          </ul>
+        </div>
       </section>
 
       <Footer />

@@ -1,20 +1,21 @@
 .navigator {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 80px;
-  padding: 0 104px;
   background: rgba(196, 196, 196, 0.01);
   border-bottom: 1px solid rgba(196, 196, 196, 0.3);
   box-sizing: border-box;
   position: relative;
+  max-width: 100%;
 }
 
 .navigator__container {
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
   align-items: center;
-  justify-content: flex-start;
-  flex: 1;
+  padding: 0px 104px;
+  justify-content: space-between;
+  width: 1440px;
 }
 
 .navigator__logo {
@@ -62,6 +63,7 @@
   font-size: 18px;
   line-height: 24px;
   color: white;
+  margin-left: 50px;
 }
 
 .navigator__signin-btn {
@@ -180,7 +182,7 @@
   background-color: currentColor;
   position: absolute;
   bottom: 0px;
-  right: 300px;
+  right: 825px;
 }
 
 .navigator__overlay {
@@ -228,6 +230,12 @@
     padding: 0 16px;
     position: relative;
     height: 56px;
+  }
+
+  .navigator__container {
+    max-width: 400px;
+    padding: 0;
+    margin: 0;
   }
 
   .navigator__logo {

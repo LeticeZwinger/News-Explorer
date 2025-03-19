@@ -55,7 +55,7 @@
   transform: scale(0.99);
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .search-bar {
     max-width: 452px;
     height: 56px;

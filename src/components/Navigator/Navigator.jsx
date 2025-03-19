@@ -55,7 +55,7 @@ function Navigator({ onSignIn, onLogout }) {
       {menuOpen && (
         <div className="navigator__overlay" onClick={() => {}}></div>
       )}
-      {/* change the name class / use as a modifier navigator_page_saved-articles */}
+
       <nav
         className={`navigator ${menuOpen ? "navigator_open" : ""} ${isSavedArticlesPage ? " navigator_page_saved-articles " : ""}`}
       >
@@ -66,79 +66,80 @@ function Navigator({ onSignIn, onLogout }) {
           >
             NewsExplorer
           </h2>
-        </div>
-        {width < 640 && (
-          <button
-            className={`${menuOpen ? "navigator__close-btn" : "navigator__menu-btn"}`}
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          ></button>
-        )}
-        <div
-          className={`.navigator__nav-items ${menuOpen ? ".navigator__nav-items_open" : ""}`}
-        >
-          <ul className="navigator__link">
-            <li className="navigator__items">
-              <button
-                style={{ color: `${getRightColor()}` }}
-                className={`navigator__home-btn ${!isSavedArticlesPage ? "navigator__home-btn_active" : ""}`}
-                onClick={() => {
-                  navigate("/");
-                  closeMenu();
-                }}
-              >
-                Home
-              </button>
-            </li>
 
-            {!user ? (
-              <li>
+          {width < 640 && (
+            <button
+              className={`${menuOpen ? "navigator__close-btn" : "navigator__menu-btn"}`}
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            ></button>
+          )}
+          <div
+            className={`.navigator__nav-items ${menuOpen ? ".navigator__nav-items_open" : ""}`}
+          >
+            <ul className="navigator__link">
+              <li className="navigator__items">
                 <button
-                  className="navigator__signin-btn"
+                  style={{ color: `${getRightColor()}` }}
+                  className={`navigator__home-btn ${!isSavedArticlesPage ? "navigator__home-btn_active" : ""}`}
                   onClick={() => {
-                    onSignIn();
+                    navigate("/");
                     closeMenu();
                   }}
                 >
-                  Sign in
+                  Home
                 </button>
               </li>
-            ) : (
-              <>
+
+              {!user ? (
                 <li>
                   <button
-                    style={{ color: `${getRightColor()}` }}
-                    className={`navigator__saved-articles-btn ${isSavedArticlesPage ? "navigator__saved-articles-btn_active" : ""}`}
+                    className="navigator__signin-btn"
                     onClick={() => {
-                      navigate("/saved-articles");
+                      onSignIn();
                       closeMenu();
                     }}
                   >
-                    Saved articles
+                    Sign in
                   </button>
                 </li>
-                <li className="navigator__user-info">
-                  <span
-                    style={{ color: `${getRightColor()}` }}
-                    className="navigator__user-name"
-                  >
-                    {user.name}
-                  </span>
-                  <span
-                    className={`navigator__logout-icon ${
-                      !isSavedArticlesPage
-                        ? "navigator__logout-icon_white"
-                        : "navigator__logout-icon_dark"
-                    }`}
-                    onClick={() => {
-                      onLogout();
-                      closeMenu();
-                    }}
-                  />
-                </li>
-              </>
-            )}
-          </ul>
+              ) : (
+                <>
+                  <li>
+                    <button
+                      style={{ color: `${getRightColor()}` }}
+                      className={`navigator__saved-articles-btn ${isSavedArticlesPage ? "navigator__saved-articles-btn_active" : ""}`}
+                      onClick={() => {
+                        navigate("/saved-articles");
+                        closeMenu();
+                      }}
+                    >
+                      Saved articles
+                    </button>
+                  </li>
+                  <li className="navigator__user-info">
+                    <span
+                      style={{ color: `${getRightColor()}` }}
+                      className="navigator__user-name"
+                    >
+                      {user.name}
+                    </span>
+                    <span
+                      className={`navigator__logout-icon ${
+                        !isSavedArticlesPage
+                          ? "navigator__logout-icon_white"
+                          : "navigator__logout-icon_dark"
+                      }`}
+                      onClick={() => {
+                        onLogout();
+                        closeMenu();
+                      }}
+                    />
+                  </li>
+                </>
+              )}
+            </ul>
+          </div>
         </div>
       </nav>
     </>

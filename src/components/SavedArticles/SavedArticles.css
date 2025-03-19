@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   padding: 0 104px;
+  max-width: 1440px;
+  min-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .saved-articles__title {
