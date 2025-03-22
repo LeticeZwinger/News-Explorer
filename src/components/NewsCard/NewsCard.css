@@ -1,0 +1,231 @@
+.newscard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 576px;
+  width: 400px;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.newscard__image-container {
+  position: relative;
+}
+
+.newscard__image {
+  width: 100%;
+  height: 272px;
+  object-fit: cover;
+}
+
+.newscard__bookmark-btn {
+  background: url(../../assets/bookmark-unsaved.svg) center no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+.newscard__bookmark-btn_saved {
+  background: url(../../assets/bookmark-saved.svg) center no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+.newscard__bookmark-btn:not(.newscard__bookmark-btn_saved):hover {
+  background: url(../../assets/bookmark-hover.svg) center no-repeat;
+  background-size: contain;
+  transform: scale(1.1);
+}
+.newscard__signin-tip {
+  display: none;
+  position: absolute;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 5.5px;
+  top: 1px;
+  right: 35px;
+  padding: 7px 15px;
+  font-size: 12px;
+  color: #1a1b22;
+  white-space: nowrap;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.newscard__bookmark-btn:hover .newscard__signin-tip {
+  display: block;
+  opacity: 1;
+}
+
+.newscard__content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px 18px;
+  flex-grow: 1;
+}
+
+.newscard__date {
+  font-family: sans-serif, "Segoe UI", Tahoma, Verdana;
+  color: #b6bcbf;
+  font-size: 18px;
+  align-self: flex-start;
+  margin-bottom: 12px;
+}
+
+.newscard__title {
+  font-family: "Roboto-slab-400", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  font-size: 26px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.newscard__text {
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.newscard__source {
+  font-family: "Roboto-slab-700", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  align-self: flex-start;
+  margin-top: auto;
+  font-size: 16px;
+  font-weight: bold;
+  color: gray;
+  text-transform: uppercase;
+  background: white;
+}
+
+.newscard__bookmark-btn:hover {
+  background-image: url(../../assets/bookmark-hover.svg);
+  transform: scale(1.1);
+}
+
+.newscard__trash-btn {
+  background: url(../../assets/trash.svg) center no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  transition: opacity 0.3s;
+}
+.newscard__trash-btn:hover {
+  opacity: 0.9;
+}
+
+.newscard__trash-btn:hover {
+  background: url(../../assets/trash-hover.svg) center no-repeat;
+  opacity: 0.9;
+  border-radius: 5.5px;
+}
+.newscard__trash-tooltip {
+  display: none;
+  position: absolute;
+  top: 1px;
+  right: 35px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 7px 15px;
+  font-size: 12px;
+  color: #1a1b22;
+  white-space: nowrap;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.newscard__keyword {
+  font-size: 14px;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 9px 16px;
+  border-radius: 10px;
+  top: 8px;
+  left: 8px;
+}
+
+.newscard__trash-btn:hover .newscard__trash-tooltip {
+  display: block;
+  opacity: 1;
+}
+
+.newscard__bookmark-btn:hover {
+  display: block;
+}
+
+@media screen and (max-width: 1400px) {
+  .newscard {
+    width: 224px;
+    height: 420px;
+  }
+
+  .newscard__image {
+    width: 224px;
+    height: 150px;
+  }
+
+  .newscard__content {
+    padding: 16px;
+  }
+
+  .newscard__title {
+    font-size: 22px;
+
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .newscard {
+    height: 440px;
+    width: 100%;
+    max-width: 288px;
+  }
+
+  .newscard__content {
+    padding: 16px;
+  }
+
+  .newscard__image {
+    width: 100%;
+    height: 196px;
+  }
+
+  .newscard__title {
+    margin-top: 10px;
+    margin-bottom: 14px;
+    font-size: 22px;
+  }
+
+  .newscard__date {
+    margin: 0;
+  }
+}

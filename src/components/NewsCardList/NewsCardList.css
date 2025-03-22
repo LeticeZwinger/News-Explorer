@@ -1,0 +1,138 @@
+.newscard-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background-color: #f5f6f7;
+  height: fit-content;
+}
+
+.newscard-list__container {
+  padding: 80px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newscard-list__header {
+  align-self: flex-start;
+  font-family: "Roboto-slab-400", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  color: rgba(26, 27, 34, 1);
+  font-size: 40px;
+  margin-bottom: 46px;
+}
+
+.newscard-list__section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  /* max-width: 1240px; */
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+.newscard-list__nothing-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  width: 300px;
+}
+
+.newscard-list__nothing-found::before {
+  content: "";
+  width: 80px;
+  height: 80px;
+  background: url(../../assets/nothing-found.svg) no-repeat center;
+  background-size: contain;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.newscard-list__nothing-title {
+  font-family: "Roboto-slab-400", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  font-size: 26px;
+  color: rgba(26, 27, 34, 1);
+  margin-bottom: 16px;
+}
+
+.newscard-list__nothing-text {
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  font-size: 18px;
+  color: rgba(182, 188, 191, 1);
+  height: 48px;
+}
+
+.newscard-list__show-more {
+  margin-top: 64px;
+  padding: 10px 20px;
+  height: 64px;
+  width: 288px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  color: #1a1b22;
+  transition: 0.3s;
+}
+
+.newscard-list__show-more:hover {
+  background-color: #e8e8e8;
+}
+
+.newscard-list__show-more_disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .newscard-list__section {
+    gap: 15px;
+    width: 700px;
+  }
+  .newscard-list__container {
+    width: 100%;
+    padding: 40px;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 767px) {
+  .newscard-list__section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .newscard-list__container {
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .newscard-list {
+    padding: 0;
+  }
+  .newscard-list__container {
+    width: 100%;
+    padding: 20px;
+  }
+  .newscard-list__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .newscard-list__header {
+    font-size: 30px;
+    margin-bottom: 58px;
+  }
+}

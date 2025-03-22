@@ -1,0 +1,325 @@
+.navigator {
+  display: flex;
+  height: 80px;
+  background: rgba(196, 196, 196, 0.01);
+  border-bottom: 1px solid rgba(196, 196, 196, 0.3);
+  box-sizing: border-box;
+  position: relative;
+  max-width: 100%;
+}
+
+.navigator__container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  padding: 0px 104px;
+  justify-content: space-between;
+  width: 1440px;
+}
+
+.navigator__logo {
+  margin: 0;
+  border-bottom: 3px solid transparent;
+  font-family: "Roboto-slab-700", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.navigator__nav-items {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 42px;
+  flex: 1;
+  padding-left: 40px;
+  margin-right: auto;
+  z-index: 20;
+}
+
+.navigator__link {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navigator__items {
+  position: relative;
+}
+
+.navigator__home-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  position: relative;
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: white;
+  margin-left: 50px;
+}
+
+.navigator__signin-btn {
+  width: 152px;
+  display: inline-block;
+  padding: 10px 50px;
+  border: 1px solid white;
+  border-radius: 50px;
+  background: transparent;
+  color: white;
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    0.3s,
+    color 0.3s;
+}
+.navigator__signin-btn:hover,
+.navigator__signin-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6);
+}
+
+.navigator__saved-articles-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  justify-content: center;
+  width: 114px;
+}
+
+.navigator__user-info {
+  padding: 10px 40px;
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  border: 1px solid white;
+  border-radius: 50px;
+}
+.navigator__user-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50px;
+}
+.navigator__logout-icon {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  background: transparent;
+}
+
+.navigator_page_saved-articles {
+  border-bottom: 1px solid rgba(209, 210, 214, 1);
+}
+
+.navigator_page_saved-articles .navigator__user-info {
+  color: #1a1b22;
+  border-color: #1a1b22;
+}
+.navigator_page_saved-articles.navigator__logo {
+  color: #1a1b22;
+  border: none;
+}
+
+.navigator__menu-btn {
+  list-style: none;
+  background: transparent;
+}
+
+.navigator__logout-icon_white {
+  background: url(../../assets/logout-white.svg) transparent no-repeat center;
+  background-size: contain;
+}
+
+.navigator__logout-icon_dark {
+  background: url(../../assets/logout-dark.svg) transparent no-repeat center;
+  background-size: contain;
+}
+
+.navigator__logout-icon:hover {
+  opacity: 0.7;
+}
+/*  */
+.navigator__home-btn_active::after {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 3px;
+  background-color: currentColor;
+  position: absolute;
+  bottom: -18px;
+  left: -10px;
+}
+
+.navigator__saved-articles-btn_active::after {
+  content: "";
+  display: block;
+  width: 143px;
+  height: 3px;
+  background-color: currentColor;
+  position: absolute;
+  bottom: -28px;
+  left: -15px;
+}
+
+.navigator__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9;
+}
+.navigator_open {
+  background: rgba(26, 27, 34, 1);
+  z-index: 20;
+  position: absolute;
+}
+
+.navigator_open + .navigator__overlay {
+  display: block;
+}
+
+@media screen and (max-width: 1024px) {
+  .navigator {
+    padding: 0 40px;
+  }
+
+  .navigator__nav-items {
+    padding: 0;
+  }
+
+  .navigator__container {
+    padding: 0;
+  }
+  .navigator_page_saved-articles {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navigator__link {
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .navigator {
+    padding: 0 16px;
+    position: relative;
+    height: 56px;
+  }
+
+  .navigator__container {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navigator__logo {
+    font-size: 16px;
+  }
+
+  .navigator__menu-btn {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(../../assets/menu.svg) center no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+  }
+
+  .navigator__close-btn {
+    background: url(../../assets/close.svg) center no-repeat;
+    background-size: contain;
+    border: none;
+    height: 24px;
+    width: 24px;
+  }
+
+  .navigator__nav-items {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    background: rgba(26, 27, 34, 1);
+    flex-direction: column;
+    gap: 15px;
+    padding: 16px 16px 16px 19px;
+    text-align: center;
+    z-index: 10;
+    transition: 0.3s ease-in-out;
+  }
+
+  .navigator__nav-items_open {
+    display: flex;
+    position: absolute;
+    top: 56px;
+    z-index: 11;
+  }
+
+  .navigator__signin-btn {
+    padding: 10px 117px;
+    width: 100%;
+  }
+
+  .navigator_page_saved-articles .navigator__user-info {
+    color: white;
+    border-color: white;
+  }
+
+  .navigator_page_saved-articles .navigator__menu-btn {
+    background: url(../../assets/menu-dark.svg) center no-repeat;
+  }
+  .navigator_page_saved-articles .navigator__logout-icon {
+    background: url(../../assets/logout-white.svg) center no-repeat;
+  }
+
+  .navigator__home-btn_active {
+    margin: 0;
+  }
+  .navigator__home-btn_active::after {
+    display: none;
+  }
+  .navigator__saved-articles-btn_active::after {
+    display: none;
+  }
+  .navigator__link {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .navigator__user-info {
+    padding: 10px 100px;
+  }
+}

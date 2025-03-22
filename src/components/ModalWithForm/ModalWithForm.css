@@ -1,0 +1,117 @@
+.modal__container_type_form {
+  background-color: #fff;
+  padding: 34px 36px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.modal__title {
+  font-family: "Roboto-900", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 auto 22px;
+  padding: 34px auto 36px;
+  color: #333;
+  text-align: left;
+}
+
+.modal__input {
+  width: 100%;
+  padding: 12px 0;
+  margin: 10px 0;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.modal__input::placeholder {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.modal__label {
+  font-family: "inter-400", sans-serif;
+  display: block;
+  text-align: left;
+  font-weight: 500;
+  color: #3b74f2;
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.modal__submit {
+  font-family: "Roboto-500", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  background-color: rgba(47, 113, 229, 1);
+  color: white;
+  border: none;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: 0.3s ease;
+}
+
+.modal__submit_disabled {
+  background-color: rgba(230, 232, 235, 1);
+  pointer-events: none;
+}
+
+.modal__submit:hover {
+  background-color: #347eff;
+}
+
+.modal__submit:active {
+  background-color: #2a65cc;
+}
+
+.modal__alternate-actions {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.modal__redirect {
+  font-family: "inter-400", sans-serif;
+  color: black;
+}
+
+.modal__or-signup-btn,
+.modal__or-signin-btn {
+  font-family: "inter-400", sans-serif;
+  font-size: 14px;
+  background: none;
+  border: none;
+  color: rgba(47, 113, 229, 1);
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+@media screen and (max-width: 640px) {
+  .modal__container_type_form {
+    border-radius: 16px 16px 0 0;
+    padding: 16px;
+    height: 480px;
+  }
+  .modal__title {
+    font-size: 24px;
+  }
+  .modal__label {
+    margin-top: 18px;
+  }
+  .modal__input {
+    padding: 6px 0 8px 0;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}

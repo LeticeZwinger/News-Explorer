@@ -1,0 +1,18 @@
+.modal__container_type_success {
+  height: 182px;
+  width: 430px;
+}
+
+.modal__success-message {
+  color: #000000;
+  font-family: "Roboto-900", system-ui, "Segoe UI", "Open Sans", sans-serif;
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 14px;
+}
+
+@media screen and (max-width: 640px) {
+  .modal__container_type_success {
+    height: 480px;
+  }
+}
