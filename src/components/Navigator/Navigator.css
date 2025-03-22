@@ -86,7 +86,7 @@
 .navigator__signin-btn:hover,
 .navigator__signin-btn:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
 }
 
 .navigator__saved-articles-btn {

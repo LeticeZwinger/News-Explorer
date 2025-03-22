@@ -29,7 +29,7 @@ function About() {
           optimizing user interaction.
         </p>
         <Link to="/learn-more" className="about__link">
-          Learn more about me!
+          Learn more 👩🏻‍💻
         </Link>
       </div>
     </section>
