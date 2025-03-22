@@ -1,5 +1,5 @@
 import "./Footer.css";
-import facebookIcon from "../../assets/facebook.svg";
+import linkedinIcon from "../../assets/linkedin.svg";
 import githubIcon from "../../assets/github.svg";
 
 function Footer() {
@@ -41,13 +41,13 @@ function Footer() {
           </li>
           <li>
             <a
-              href="https://www.facebook.com"
+              href="https://www.linkedin.com/in/letice-zwinger/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer__icon"
             >
               <img
-                src={facebookIcon}
+                src={linkedinIcon}
                 alt="Facebook"
                 className="footer__icon-img"
               />
