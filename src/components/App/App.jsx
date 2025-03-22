@@ -9,6 +9,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 import NewsCardList from "../NewsCardList/NewsCardList";
+import LearnMore from "../LearnMore/LearnMore";
 import "./App.css";
 
 function App() {
@@ -98,6 +99,7 @@ function App() {
           path="/saved-articles"
           element={<SavedArticles onLogout={handleLogout} />}
         />
+        <Route path="/learn-more" element={<LearnMore />}></Route>
       </Routes>
     </div>
   );

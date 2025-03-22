@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import authorImage from "../../assets/author.jpg";
 import "./About.css";
 
@@ -26,6 +28,9 @@ function About() {
           experiences. Whether it's developing a clean and functional website or
           optimizing user interaction.
         </p>
+        <Link to="/learn-more" className="about__link">
+          Learn more about me!
+        </Link>
       </div>
     </section>
   );
