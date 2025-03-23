@@ -9,7 +9,22 @@
 
   height: 100%;
 }
-.learn-more_temporary-msg {
-  font-family: "Roboto";
-  font-size: 18px;
+
+.learn-more__title {
+}
+
+.learn-more__subtitle {
+  color: rgb(195, 89, 54);
+  background-color: rgb(208, 222, 234);
+}
+.learn-more__paragraph {
+}
+
+.learn-more__skill {
+}
+
+.learn-more__skill-item {
+}
+
+.learn-more__skill-description {
 }
