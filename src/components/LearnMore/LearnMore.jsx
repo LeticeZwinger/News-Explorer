@@ -3,6 +3,7 @@ function LearnMore() {
   return (
     <div className="learn-more">
       <h1 className="learn-more__title">About my history</h1>
+      <p>My history</p>
       <h2 className="learn-more__subtitle">professonal sumary</h2>
       <p className="learn-more__paragraph">detailed professional</p>
       <h2 className="learn-more__subtitle">professional experience</h2>
