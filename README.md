@@ -60,6 +60,8 @@ Powered by [News API](https://newsapi.org/) database and implemented via API cal
 
  	Gh-pages
 	• gh-pages v6.3.0 - Automates deployment of the built project to GitHub Pages
+ 
+ 	Json-server
 	• json-server v1.0.0 - beta.3 Quickly creates a mock REST API for development and testing.
 
 
