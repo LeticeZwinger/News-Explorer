@@ -9,15 +9,15 @@
 
 This is the Final Project of Triple10 web dev program. In this project we practice:
 
-	HTML Semantics
- * Structuring content meaningfully for accessibility and SEO
- * CSS Properties, Grid, and Flexbox Layouts – Building responsive and visually appealing designs.
- * Responsive Web Design & Media Queries – Adapting layouts for different screen sizes.
- * Modern JavaScript (ES6+) & React – Creating dynamic, component-based user interfaces.
- * RESTful APIs – Integrating external data sources with API calls.
- * Version Control with Git & GitHub – Managing code changes and collaborating effectively.
- * Code Quality Practices – Enforcing consistency with ESLint and best practices.
- * Deployment – Publishing the final project on GitHub Pages.
+* HTML Semantics
+* Structuring content meaningfully for accessibility and SEO
+* CSS Properties, Grid, and Flexbox Layouts – Building responsive and visually appealing designs.
+* Responsive Web Design & Media Queries – Adapting layouts for different screen sizes.
+* Modern JavaScript (ES6+) & React – Creating dynamic, component-based user interfaces.
+* RESTful APIs – Integrating external data sources with API calls.
+* Version Control with Git & GitHub – Managing code changes and collaborating effectively.
+* Code Quality Practices – Enforcing consistency with ESLint and best practices.
+* Deployment – Publishing the final project on GitHub Pages.
 
 ![desktop-view](/src/assets/newsexplorer.png)
 
@@ -42,6 +42,7 @@ Powered by [News API](https://newsapi.org/) database and implemented via API cal
 	
 
 # System Requirements
+
 	•	Node.js: Version 18 or later is required.
 	•	npm: Version 8 or later (or an equivalent package manager such as Yarn).
 	•	Web Browser: A modern browser (e.g. Chrome, Firefox, Safari, or Edge) is needed to run the application.
