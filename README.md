@@ -43,8 +43,9 @@ Powered by [News API](https://newsapi.org/) database and implemented via API cal
 
 # System Requirements
 
-* Node.js: Version 18 or later is required.
-* npm: Version 8 or later (or an equivalent package manager such as Yarn).
+* Node.js: v18.0.0 or later
+* npm: v8.0.0 or later (or an equivalent package such as Yarn).
+* Vite: Used for bundling and local development (installed as a dev dependency)
 * Web Browser: A modern browser (e.g. Chrome, Firefox, Safari, or Edge) is needed to run the application.
 
 
