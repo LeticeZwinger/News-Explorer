@@ -23,7 +23,7 @@ This is the Final Project of Triple10 web dev program. In this project we practi
 
 # API
 
-Powered by [News API](https://newsapi.org/) database and implemented via API calls.
+Powered by [News API](https://newsapi.org/) database and implemented via API calls:
 
 
 # Deploy
@@ -43,24 +43,25 @@ Powered by [News API](https://newsapi.org/) database and implemented via API cal
 
 # System Requirements
 
-	•	Node.js: Version 18 or later is required.
-	•	npm: Version 8 or later (or an equivalent package manager such as Yarn).
-	•	Web Browser: A modern browser (e.g. Chrome, Firefox, Safari, or Edge) is needed to run the application.
+* Node.js: Version 18 or later is required.
+* *npm: Version 8 or later (or an equivalent package manager such as Yarn).
+* Web Browser: A modern browser (e.g. Chrome, Firefox, Safari, or Edge) is needed to run the application.
 
 
 
 # Plugins
 
-	•	@vitejs/plugin-react: Integrates React with Vite, providing fast refresh and optimized builds.
-	•	ESLint Plugins:
-	•	eslint-plugin-react: Enforces best practices and code style for React components.
-	•	eslint-plugin-react-hooks: Helps enforce correct usage of React Hooks.
-	•	eslint-plugin-react-refresh: Supports React Fast Refresh for an improved development experience.
-	•	gh-pages: Automates deployment of the built project to GitHub Pages.
-	•	json-server: Quickly creates a mock REST API for development and testing.
+* @vitejs/plugin-react v4.3.4 - Integrates React with Vite, providing fast refresh and optimized builds.
+	•	eslint-plugin-react v7.37.4 - Enforces best practices and code style for React components.
+	•	eslint-plugin-react-hooks: v5.1.0 - Helps enforce correct usage of React Hooks.
+	•	eslint-plugin-react-refresh v0.4.18 - Supports React Fast Refresh for an improved development experience.
+	•	gh-pages v6.3.0 - Automates deployment of the built project to GitHub Pages.
+	•	json-server v1.0.0 - beta.3 Quickly creates a mock REST API for development and testing.
 
 
 
 # [Video Demo](https://youtu.be/VhNlEbHPNXg)
+
+# [Figma Design](https://www.figma.com/design/3ottwMEhlBt95Dbn8dw1NH/Your-Final-Project?node-id=22618-1909&t=bCDc10P4VHBpp68C-0)
 
 
