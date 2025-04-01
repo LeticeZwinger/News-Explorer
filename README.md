@@ -1,21 +1,65 @@
-Available at https://leticezwinger.github.io/News-Explorer/ 😃
 
-News Explorer
 
-News Explorer is a responsive React application that allows users to search for news articles, view results in a clean grid layout, and save their favorite articles. Users can sign up and sign in to save articles, and the app adapts its layout for desktop, tablet, and mobile devices.
+# [Project News Explorer](https://leticezwinger.github.io/News-Explorer/)
 
-Features
-• News Search: Users can search for news articles via the News API.
-• Responsive Design: The layout adjusts for desktop, tablet, and mobile (including special mobile navigation and stacked layouts).
-• User Authentication (Simulated): Users can sign up and sign in. Although authentication is simulated (with stubbed responses), it demonstrates the flow.
-• Saved Articles: Logged-in users can save articles and view them on a dedicated Saved Articles page.
-• Modals: The app uses modals for sign in, sign up, and success notifications with smooth transitions.
-• Modern Styling: Uses CSS flexbox and grid, media queries, and custom animations.
+# Table of Contents
 
-Technologies
-• React – A JavaScript library for building user interfaces.
-• Vite – A fast build tool for modern web projects.
-• React Router – For client-side routing.
-• CSS – For styling, including responsive design with media queries.
+# Description
+  News Explorer is a responsive web application built with React and Vite that allows users to search for their favorite articles from various sources via the News API. Users can explore headlines, view detailed articles, and save their favorites for later—all within a modern, mobile-friendly interface. The project features dynamic search functionality, smooth modal interactions for sign-in and registration, and a clean, engaging user experience.
 
-#[video demo](https://youtu.be/VhNlEbHPNXg)
+This is the Final Project of Triple10 web dev program. In this project we practice:
+
+	HTML Semantics
+ * Structuring content meaningfully for accessibility and SEO
+ * CSS Properties, Grid, and Flexbox Layouts – Building responsive and visually appealing designs.
+ * Responsive Web Design & Media Queries – Adapting layouts for different screen sizes.
+ * Modern JavaScript (ES6+) & React – Creating dynamic, component-based user interfaces.
+ * RESTful APIs – Integrating external data sources with API calls.
+ * Version Control with Git & GitHub – Managing code changes and collaborating effectively.
+ * Code Quality Practices – Enforcing consistency with ESLint and best practices.
+ * Deployment – Publishing the final project on GitHub Pages.
+
+![desktop-view](/src/assets/newsexplorer.png)
+
+# API
+
+Powered by [News API](https://newsapi.org/) database and implemented via API calls.
+
+
+# Deploy
+
+	Install Dependencies
+	•	npm install
+
+	Development Mode
+	•	npm run dev
+
+	Production Build
+	•      npm run build
+
+	Deploying
+	•	npm run deploy
+	
+
+# System Requirements
+	•	Node.js: Version 18 or later is required.
+	•	npm: Version 8 or later (or an equivalent package manager such as Yarn).
+	•	Web Browser: A modern browser (e.g. Chrome, Firefox, Safari, or Edge) is needed to run the application.
+
+
+
+# Plugins
+
+	•	@vitejs/plugin-react: Integrates React with Vite, providing fast refresh and optimized builds.
+	•	ESLint Plugins:
+	•	eslint-plugin-react: Enforces best practices and code style for React components.
+	•	eslint-plugin-react-hooks: Helps enforce correct usage of React Hooks.
+	•	eslint-plugin-react-refresh: Supports React Fast Refresh for an improved development experience.
+	•	gh-pages: Automates deployment of the built project to GitHub Pages.
+	•	json-server: Quickly creates a mock REST API for development and testing.
+
+
+
+# [Video Demo](https://youtu.be/VhNlEbHPNXg)
+
+
