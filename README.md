@@ -50,13 +50,17 @@ Powered by [News API](https://newsapi.org/) database and implemented via API cal
 
 
 # Plugins
+	Vite
+	•	@vitejs/plugin-react v4.3.4 - Integrates React with Vite, providing fast refresh and optimized builds
+	
+ 	ESlint
+  	•	eslint-plugin-react v7.37.4 - Enforces best practices and code style for React components
+	•	eslint-plugin-react-hooks v5.1.0 - Helps enforce correct usage of React Hooks
+	•	eslint-plugin-react-refresh v0.4.18 - Supports React Fast Refresh for an improved development experience
 
-	* @vitejs/plugin-react v4.3.4 - Integrates React with Vite, providing fast refresh and optimized builds
-	* eslint-plugin-react v7.37.4 - Enforces best practices and code style for React components
-	* eslint-plugin-react-hooks v5.1.0 - Helps enforce correct usage of React Hooks
-	* eslint-plugin-react-refresh v0.4.18 - Supports React Fast Refresh for an improved development experience
-	* gh-pages v6.3.0 - Automates deployment of the built project to GitHub Pages
-	* json-server v1.0.0 - beta.3 Quickly creates a mock REST API for development and testing.
+ 	Gh-pages
+	•	gh-pages v6.3.0 - Automates deployment of the built project to GitHub Pages
+	•	json-server v1.0.0 - beta.3 Quickly creates a mock REST API for development and testing.
 
 
 
