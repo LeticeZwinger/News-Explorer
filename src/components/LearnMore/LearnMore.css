@@ -1,0 +1,29 @@
+.portfolio {
+  padding: 60px 20px;
+  background-color: #aec1edc5;
+  max-width: 100%;
+}
+
+.portifolio__skills {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.portfolio__skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.portfolio__skill-card {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio__skill-card:hover {
+  transform: translateY(-4px);
+}
