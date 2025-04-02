@@ -2,7 +2,7 @@ import "./LearnMore.css";
 function LearnMore() {
   return (
     <section className="portfolio">
-      <div className="portifolio__skills">
+      <div className="portfolio__container">
         <div className="portfolio__intro">
           <h1 className="portfolio__title">Hi, I’m Letice 👩🏻‍💻</h1>
           <p className="portfolio__description">

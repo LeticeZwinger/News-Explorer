@@ -4,11 +4,16 @@
   max-width: 100%;
 }
 
-.portifolio__skills {
+.portfolio__container {
+  background-color: aliceblue;
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
 }
+
 .portfolio__skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
