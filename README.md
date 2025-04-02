@@ -1,8 +1,17 @@
 
 
-# [Project News Explorer](https://leticezwinger.github.io/News-Explorer/)
+# [News Explorer](https://leticezwinger.github.io/News-Explorer/)
+
 
 # Table of Contents
+
+* [Description](#description)
+* [API](#api)
+* [Deploy](#deploy)
+* [System Requirements](#system-requirements)
+* [Plugins](#plugins)
+* [<a href="https://youtu.be/VhNlEbHPNXg" rel="nofollow">Video Demo</a>](https://youtu.be/VhNlEbHPNXg)
+* [<a href="https://www.figma.com/design/3ottwMEhlBt95Dbn8dw1NH/Your-Final-Project?node-id=22618-1909&amp;t=bCDc10P4VHBpp68C-0" rel="nofollow">Figma Design</a>](https://www.figma.com/design/3ottwMEhlBt95Dbn8dw1NH/Your-Final-Project?node-id=22618-1909&amp;t=bCDc10P4VHBpp68C-0)
 
 # Description
   News Explorer is a responsive web application built with React and Vite that allows users to search for their favorite articles from various sources via the News API. Users can explore headlines, view detailed articles, and save their favorites for later—all within a modern, mobile-friendly interface. The project features dynamic search functionality, smooth modal interactions for sign-in and registration, and a clean, engaging user experience.
